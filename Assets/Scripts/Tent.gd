@@ -4,7 +4,7 @@ extends Node
 var timer = Timer.new()
 var spawnableUnits
 var currentProduction = 0
-var unit1 = load("res://Soldier1.tscn")
+var unit1 = load("res://Assets/Scenes/Soldier.tscn")
 var ownerPlayerNumber
 
 export var timeBetweenSpawns = 5

@@ -11,6 +11,7 @@ const leftdown = preload("res://Assets/Sprites/Grid sprites/3.png")
 const rightup = preload("res://Assets/Sprites/Grid sprites/2.png")
 const rightdown = preload("res://Assets/Sprites/Grid sprites/4.png")
 
+const tent = preload("res://Assets/Scenes/Tent.tscn")
 
 
 
@@ -30,6 +31,7 @@ func _ready():
 	
 
 func generateGrid():
+	var rng = RandomNumberGenerator.new()
 	for x in range(width):
 		tiles.append([])
 		for y in range(height):
@@ -53,6 +55,10 @@ func generateGrid():
 			else:
 				texture = rightdown
 			tile.get_node("Sprite").texture = texture
+			
+			
+			if rng.randi_range(0,10) < 2:
+				tile.get_node(".").addContent(tent.instance())
 			#var darker = ((x + y) % 2) == 1
 			#if(darker):
 			#	tile.get_node("Sprite").modulate = Color(0, 0, 1)
