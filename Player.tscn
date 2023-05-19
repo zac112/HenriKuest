@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/RotatedPlayer.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Player.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 31.06, 8.45133 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ -396.0 ]
+}
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2( 84, 57 )
+scale = Vector2( 0.53123, -2.30733 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.941208, 0.216698 )
+shape = SubResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+scale = Vector2( 3.764, -0.866 )
+frames = SubResource( 6 )
+animation = "right"
+
+[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
