@@ -13,6 +13,9 @@ func _ready():
 	position.y = start_coord_y
 	$CollisionShape2D.disabled = false
 	$AnimatedSprite.animation = "default"
+	var grid = get_parent().get_node("GridManager")
+	width = grid.width
+	heigth = grid.height
 
 
 func _process(delta):
