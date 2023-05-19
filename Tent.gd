@@ -5,6 +5,7 @@ var timer = Timer.new()
 var spawnableUnits
 var currentProduction = 0
 var unit1 = load("res://Soldier1.tscn")
+var ownerPlayerNumber
 
 export var timeBetweenSpawns = 5
 
@@ -32,12 +33,18 @@ func _handleSpawning():
 	spawn.position.y = self.position.y + 10
 	add_child(spawn)
 	
-
+	
+# Set the next produced unit and reset timer.
 func changeProduction(selection):
 	if selection >= 0 && selection < spawnableUnits.size():
 		timer.stop()
 		currentProduction = selection
 		timer.start()
+	
+	
+# Change the ownership of the tent.
+func setOwnership(targetPlayerNumber):
+	ownerPlayerNumber = targetPlayerNumber
 	
 	
 # Destroys the tent and its child timer.
