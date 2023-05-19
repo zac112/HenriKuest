@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/RotatedPlayer.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Player.png" type="Texture" id=4]
 
@@ -28,7 +27,6 @@ __meta__ = {
 [node name="Player" type="Area2D" parent="."]
 position = Vector2( 84, 57 )
 scale = Vector2( 0.53123, -2.30733 )
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }

@@ -12,6 +12,7 @@ export var timeBetweenSpawns = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.add_to_group("Tents")
 	spawnableUnits = [unit1]
 	add_child(timer)
 	timer.start()
