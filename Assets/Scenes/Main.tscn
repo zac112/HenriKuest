@@ -38,8 +38,8 @@ animations = [ {
 
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
-width = 12
-height = 9
+width = 20
+height = 15
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 511, 298 )

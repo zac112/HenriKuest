@@ -12,22 +12,26 @@ const rightup = preload("res://Assets/Sprites/Grid sprites/2.png")
 const rightdown = preload("res://Assets/Sprites/Grid sprites/4.png")
 
 const tent = preload("res://Assets/Scenes/Tent.tscn")
-
+const tent2 = preload("res://Assets/Scenes/Tent2.tscn")
+const tent3 = preload("res://Assets/Scenes/Tent3.tscn")
+const tent4 = preload("res://Assets/Scenes/Tent4.tscn")
+const tent_destroyed = preload("res://Assets/Scenes/Tent_destroyed.tscn")
 
 
 var tiles = [[]]
+var tents 
 
 #makes variables editable from godot editor
-export var width = 8
-export var height = 6
+export var width = 60
+export var height = 40
 
 export var tileSize = 48
 var gridOffset = -48
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	tents = [tent,tent2,tent3,tent4,tent_destroyed]
 	generateGrid()
-	pass # Replace with function body.
 	
 
 func generateGrid():
@@ -58,7 +62,7 @@ func generateGrid():
 			
 			
 			if rng.randi_range(0,10) < 2:
-				tile.get_node(".").addContent(tent.instance())
+				tile.get_node(".").addContent(tents[rng.randi_range(0,len(tents)-1)].instance())
 			#var darker = ((x + y) % 2) == 1
 			#if(darker):
 			#	tile.get_node("Sprite").modulate = Color(0, 0, 1)
