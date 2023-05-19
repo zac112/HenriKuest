@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Fighter",
+"language": "GDScript",
+"path": "res://Assets/Scenes/Fighter.gd"
+} ]
+_global_script_class_icons={
+"Fighter": ""
+}
+
 [application]
 
 config/name="HenriKuest_gamejam"
