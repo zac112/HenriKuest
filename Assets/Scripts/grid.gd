@@ -20,6 +20,9 @@ const tent_destroyed = preload("res://Assets/Scenes/Tent_destroyed.tscn")
 
 var tiles = [[]]
 var tents 
+var obstacles = [
+	preload("res://Assets/Scenes/Obstacle.tscn"),
+	preload("res://Assets/Scenes/Obstacle2.tscn")]
 
 #makes variables editable from godot editor
 export var width = 60
@@ -63,6 +66,9 @@ func generateGrid():
 			
 			if rng.randi_range(0,10) < 2:
 				tile.get_node(".").addContent(tents[rng.randi_range(0,len(tents)-1)].instance())
+			elif rng.randi_range(0,10) < 2:
+				tile.get_node(".").addContent(obstacles[rng.randi_range(0,len(obstacles)-1)].instance())
+				
 			#var darker = ((x + y) % 2) == 1
 			#if(darker):
 			#	tile.get_node("Sprite").modulate = Color(0, 0, 1)

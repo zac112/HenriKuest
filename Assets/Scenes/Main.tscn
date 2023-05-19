@@ -53,6 +53,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+width = 20
+heigth = 15
 cell_width = 48
 start_coord_x = 48
 start_coord_y = 48
