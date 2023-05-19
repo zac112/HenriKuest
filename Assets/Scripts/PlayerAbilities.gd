@@ -13,20 +13,6 @@ func _ready():
 func _process(delta):
 	_checkInput()
 	
-
-# Returns the closest tent.
-func _getClosestTent():
-	var closestTent
-	var tents = get_tree().get_nodes_in_group("Tents")
-	
-	if tents.size() >= 0:
-		closestTent = tents[0]
-		
-	for tent in tents:
-		if tent.global.position.distance_to(self.global_position) < closestTent.global.position.distance_to(self.global_position):
-			closestTent = tent
-	
-	return closestTent
 	
 	
 # Returns a list of soldiers within maxDistanceToCallSoldiers.
@@ -45,6 +31,9 @@ func _checkInput():
 	if Input.is_action_pressed("command_troops"):
 		commandSoldiers()
 
+func body_entered(body:Node):
+	print(body)
+	
 
 func commandSoldiers():
 	var nearbySoldiers = _getNearbySoldiers()
