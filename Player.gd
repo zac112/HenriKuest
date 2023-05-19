@@ -6,7 +6,7 @@ export var heigth = 9
 export var cell_width = 40
 export var start_coord_x = 40
 export var start_coord_y = 40
-export var speed = 400
+export var speed = 200
 
 func _ready():
 	position.x = start_coord_x
