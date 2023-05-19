@@ -12,7 +12,7 @@ var tiles = [[]]
 var width = 8
 var height = 3
 
-var tileSize = 100
+var tileSize = 50
 var gridOffset = 100
 
 # Called when the node enters the scene tree for the first time.
@@ -44,13 +44,13 @@ func generateGrid():
 		
 
 func getTileWPos(worldPos):
-	var x = int((worldPos.x + gridOffset) / tileSize)
-	var y = int((worldPos.y + gridOffset) / tileSize)
+	var x = int((worldPos.x + gridOffset) / tileSize +0.5)
+	var y = int((worldPos.y + gridOffset) / tileSize +0.5)
 	if (x >= width): x = width - 1
 	if (y >= width): y = height - 1
 	if (x <= 0): x = 0
 	if (y <= 0): y = 0
-	return tiles[x][y];
+	return tiles[x][y]
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
