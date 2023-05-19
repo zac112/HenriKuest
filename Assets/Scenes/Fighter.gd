@@ -25,7 +25,6 @@ func startMoving():
 	
 func changeDirection():
 	var dir = noise.get_noise_2d(position.x, position.y)
-	print(dir)
 	angle = dir*360 - PI/2.0
 	
 func _process(delta):
