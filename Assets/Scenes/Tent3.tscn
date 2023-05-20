@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Scripts/Tent.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Tents.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scripts/TentFillbar.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sprites/Square.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scripts/EnemyTent.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Scripts/tentZIndex.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 27.7218
@@ -18,6 +19,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 26, 0, 13, 17 )
+script = ExtResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2( 2, 2 )
