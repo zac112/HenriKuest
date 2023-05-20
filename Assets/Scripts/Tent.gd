@@ -13,6 +13,7 @@ var soldiers = []
 export var ownerPlayerNumber = 0
 export var timeBetweenSpawns = 20
 
+onready var mask = get_node("FillBar/Light2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,7 +27,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var percentDone = timer.get_time_left()/timer.get_wait_time()
+	if mask:
+		mask.setScale(1-percentDone)
 	
 
 # Called by timer countdown. Spawns the unit currently in production.
