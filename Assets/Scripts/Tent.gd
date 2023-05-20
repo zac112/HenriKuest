@@ -69,6 +69,7 @@ func changeProduction(selection):
 	
 # Change the ownership of the tent.
 func setOwnership(targetPlayerNumber):
+	grid.removeTent(ownerPlayerNumber)
 	ownerPlayerNumber = targetPlayerNumber
 	_destroy()
 	var newTent = grid.spawnTent(get_parent(), targetPlayerNumber)
