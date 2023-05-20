@@ -11,6 +11,9 @@ func _ready():
 	connect("body_exited", self, "_on_body_exited")
 
 func _on_body_entered(body:Node):
+	if body.is_in_group("AIPlayer"):
+		player = body
+		
 	if body.is_in_group("Player"):
 		player = body
 		recruitable = true

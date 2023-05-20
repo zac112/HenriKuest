@@ -5,7 +5,7 @@ var timer = Timer.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global_position = Vector2(0,0)
+	pass
 	
 
 func travelPath(path:Array):

@@ -10,6 +10,7 @@ var defenders = []
 var battleTimer = Timer.new()
 var parentSquare
 export var minDefendersToAttack = 5
+export var AIavatar = preload("res://Assets/Scenes/PlayerAI.tscn")
 var symbolShowing = false
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +27,7 @@ func _ready():
 	symbol = battle_symbol.instance()
 	
 func _on_body_entered(body:Node):
+	
 	if body.is_in_group("Player"):
 		player = body
 		combat = true
@@ -66,8 +68,14 @@ func _attack():
 		if tent.get_parent().position.distance_to(parentSquare.position) < closestTent.get_parent().position.distance_to(parentSquare.position):
 			closestTent = tent
 	
+	var aiPlayer = AIavatar.instance()
+	add_child(aiPlayer)
+	
+	var path = get_node("/root/Main Node/GridManager").findPath(aiPlayer.global_position, closestTent.get_parent().global_position)
+	aiPlayer.travelPath(path)
+	
 	for defender in defenders:
-		defender.setTarget(closestTent.get_parent())
+		defender.setTarget(aiPlayer)
 	
 	defenders.clear()
 	
