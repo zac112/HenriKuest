@@ -6,7 +6,7 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 position = Vector2( 152, 101 )
 script = ExtResource( 1 )
 

@@ -5,11 +5,13 @@ extends Node
 var player
 var combat = false
 var attackers = []
-var defenders = []
+var defenders
 var battleTimer = Timer.new()
+var parentTent = get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var defenders = get_parent().getSoldiers()
 	add_child(battleTimer)
 	battleTimer.wait_time = 2
 	battleTimer.connect("timeout", self, "_killTroops")
@@ -22,7 +24,6 @@ func _on_body_entered(body:Node):
 		combat = true
 		_getAttackersFromPlayer()
 		print("Pelaaja vihollisteltan lähellä")
-		_simulateCombat()
 
 func _on_body_exited(body:Node):
 	if body.is_in_group("Player") && attackers.size() == 0:
@@ -32,7 +33,7 @@ func _on_body_exited(body:Node):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (combat == true):
-		_simulateCombat()
+		battleTimer.start()
 	
 
 func _getAttackersFromPlayer():
@@ -41,21 +42,16 @@ func _getAttackersFromPlayer():
 		print(child.name)
 		if child.is_in_group("Soldiers"):
 			attackers.append(child)
-			child.get_parent().remove_child(child)
-			add_child(child)
+			child.setTarget(parentTent)
 
-
-func _simulateCombat():
-	defenders = get_parent().getSoldiers()
-	battleTimer.start()
-	
 
 func _killTroops():
+	print("Combat in progress!")
 	if attackers.size() == 0 || defenders.size() == 0:
 		combat = false
 		battleTimer.stop()
 		print("Combat ended")
 	else:
-		attackers.pop_back()
-		defenders.pop_back()
+		attackers.pop_back().queue_free()
+		defenders.pop_back().queue_free()
 		print("Troops killed")
