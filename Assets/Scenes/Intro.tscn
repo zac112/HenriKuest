@@ -83,6 +83,7 @@ margin_bottom = 234.0
 texture = ExtResource( 3 )
 
 [node name="MenuButton" type="MenuButton" parent="CanvasLayer"]
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -96,7 +97,6 @@ button_mask = 7
 text = "Press any button"
 
 [node name="PopupMenu2" type="PopupMenu" parent="CanvasLayer/MenuButton"]
-visible = true
 margin_right = 20.0
 margin_bottom = 20.0
 
