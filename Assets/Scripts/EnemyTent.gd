@@ -49,6 +49,12 @@ func _killTroops():
 	print("Combat in progress!")
 	if attackers == null:
 		return
+		
+	if defenders.size() == 0:
+		print("Teltta tyhjä")
+		get_parent().setOwnership(0)
+		combat = false
+		return
 	
 	if attackers.size() == 0 || defenders.size() == 0:
 		combat = false
@@ -59,5 +65,3 @@ func _killTroops():
 		defenders.pop_back().queue_free()
 		print("Troops killed")
 		
-	print(defenders)
-	print(attackers)
