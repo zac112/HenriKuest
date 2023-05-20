@@ -14,12 +14,10 @@ func _on_body_entered(body:Node):
 	if body.is_in_group("Player"):
 		player = body
 		recruitable = true
-		print("Pelaaja teltan lähellä")
 
 func _on_body_exited(body:Node):
 	if body.is_in_group("Player"):
 		recruitable = false
-		print("Pelaaja poistui teltan läheltä")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

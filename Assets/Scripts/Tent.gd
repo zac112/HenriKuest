@@ -69,7 +69,6 @@ func setOwnership(targetPlayerNumber):
 	ownerPlayerNumber = targetPlayerNumber
 	_destroy()
 	var newTent = grid.spawnTent(get_parent(), targetPlayerNumber)
-	print("Vaihdetaan omistaja")
 	return newTent
 	
 	
