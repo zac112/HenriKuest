@@ -13,7 +13,6 @@ func _ready():
 func _process(delta):
 	_checkInput()
 
-	
 
 func _on_body_entered(body:Node):
 	if body.is_in_group("Soldiers"):
@@ -33,5 +32,8 @@ func _checkInput():
 	
 func commandSoldiers():
 	for soldier in nearbySoldiers:
+		#soldier.queue_free()
 		soldier.get_parent().remove_child(soldier)
 		self.get_parent().add_child(soldier)
+		print(soldier.name + " seuraa.")
+		
