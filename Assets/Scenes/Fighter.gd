@@ -7,6 +7,7 @@ var rng = RandomNumberGenerator.new()
 var angle = 0
 #Home tent position
 var home_tent = Vector2(50,50)
+var target
 var go_around_point = home_tent
 var max_dist = 50
 
@@ -31,10 +32,14 @@ func _ready():
 	print("Width " + str(width) + " h: " + str(height))
 	startMoving()
 
-func setTent(position):
-	home_tent = position
+func setTent(tent):
+	home_tent = tent
+	target = home_tent
 	go_around_point = home_tent	
 
+func setTarget(target):
+	self.target = target
+	
 func startMoving():
 	while true:
 		yield(get_tree().create_timer(0.8), "timeout")
@@ -50,31 +55,25 @@ func changeDirection():
 func move(delta):
 		# Define some speed
 	var speed = 100.0
-
+	go_around_point = target.position
 	# Calculate direction:
 	# the Y coordinate must be inverted,
 	# because in 2D the Y axis is pointing down
 	var dir = Vector2(cos(angle), -sin(angle))
 	var new_pos = (position + dir * (speed * delta))
-	go_around_point = get_parent().position
 	# Move
 	#position = (position + dir * (speed * delta))
 	var dist = new_pos.distance_to(go_around_point)
 	var distbefore = position.distance_to(go_around_point)
-	var glob = (global_position + dir * (speed*delta))
-	if (glob.x < cell_width or glob.x > width*cell_width):
-		return
-	if (glob.y < cell_width or glob.y > height * cell_width):
-		return
 	if (dist > max_dist and distbefore < dist):
-		dir = Vector2(-position.x, -position.y)
+		dir = Vector2(go_around_point.x-position.x, go_around_point.y-position.y)
 		var direction_vector = dir.normalized() * speed * delta
 		new_pos = position + direction_vector
 	position = new_pos
 	
 	
-	#position.x = clamp(position.x, cell_width, width*cell_width)
-	#position.y = clamp(position.y, cell_width, height*cell_width)
+	position.x = clamp(position.x, cell_width, width*cell_width)
+	position.y = clamp(position.y, cell_width, height*cell_width)
 	
 
 	
