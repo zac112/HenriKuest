@@ -3,8 +3,11 @@ extends Node
 # Declare member variables here.
 var timer = Timer.new()
 var spawnableUnits
-var currentProduction = 0
+var currentProduction = 1
+var unit0 = load("res://Assets/Scenes/Soldier_ally.tscn")
 var unit1 = load("res://Assets/Scenes/Soldier.tscn")
+var unit2 = load("res://Assets/Scenes/Soldier2.tscn")
+var unit3 = load("res://Assets/Scenes/Soldier3.tscn")
 var ownerPlayerNumber
 
 export var timeBetweenSpawns = 5
@@ -13,7 +16,7 @@ export var timeBetweenSpawns = 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.add_to_group("Tents")
-	spawnableUnits = [unit1]
+	spawnableUnits = [unit0, unit1, unit2, unit3]
 	add_child(timer)
 	timer.start()
 	timer.wait_time = timeBetweenSpawns
