@@ -11,7 +11,7 @@ var unit3 = load("res://Assets/Scenes/Soldier3.tscn")
 var ownerPlayerNumber
 var soldiers = []
 
-export var timeBetweenSpawns = 5
+export var timeBetweenSpawns = 20
 
 
 # Called when the node enters the scene tree for the first time.
@@ -34,8 +34,9 @@ func _handleSpawning():
 	var unit = spawnableUnits[currentProduction]
 
 	var spawn = unit.instance()
-	spawn.position.x = self.position.x + 10
-	spawn.position.y = self.position.y + 10
+	spawn.position.x = 0
+	spawn.position.y = 0
+	spawn.setTent(self.position)
 	add_child(spawn)
 	soldiers.append(spawn)
 	
