@@ -7,6 +7,7 @@ var cell_width = 40
 var start_coord_x = 40
 var start_coord_y = 40
 export var speed = 200
+var followers = []
 
 func _ready():
 	$CollisionShape2D.disabled = false
@@ -48,6 +49,8 @@ func _process(delta):
 		$AnimatedSprite.flip_h = false
 	
 
+func getFollowers():
+	return followers
 
 func _on_Player_body_entered(body):
 	emit_signal("hit")

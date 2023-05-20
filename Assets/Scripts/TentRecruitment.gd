@@ -38,7 +38,7 @@ func _recruitSoldiers():
 		#soldier.get_parent().remove_child(soldier)
 		#player.add_child(soldier)
 		soldier.setTarget(player)
+		player.getFollowers().append(soldier)
 		soldier.modulate = Color(10, 1, 1)
-		print(soldier.name)
 	
 	soldiers.clear()

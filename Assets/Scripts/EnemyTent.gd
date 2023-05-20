@@ -7,10 +7,11 @@ var combat = false
 var attackers = []
 var defenders
 var battleTimer = Timer.new()
-var parentTent = get_parent()
+var parentSquare
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	parentSquare = get_parent().get_parent()
 	var defenders = get_parent().getSoldiers()
 	add_child(battleTimer)
 	battleTimer.wait_time = 2
@@ -37,11 +38,10 @@ func _process(delta):
 	
 
 func _getAttackersFromPlayer():
-	var playerChildren = player.get_children()
-	for child in playerChildren:
-		if child.is_in_group("Soldiers"):
-			attackers.append(child)
-			child.setTarget(parentTent)
+	var playerSoldiers = player.getFollowers()
+	for soldier in playerSoldiers:
+		attackers.append(soldier)
+		soldier.setTarget(parentSquare)
 
 
 func _killTroops():
