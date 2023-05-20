@@ -29,6 +29,9 @@ export var height = 40
 
 export var tileSize = 48
 var gridOffset = -48
+var spawnedTentsCount = 0
+var playerTents = 0
+var canWin = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -64,7 +67,7 @@ func generateGrid():
 			
 			
 			if rng.randi_range(0,10) < 2:
-				tile.get_node(".").addContent(tents[rng.randi_range(0,len(tents)-1)].instance())
+				spawnTent(tile, rng.randi_range(0,len(tents)-1))
 			elif rng.randi_range(0,10) < 2:
 				tile.get_node(".").addContent(obstacles[rng.randi_range(0,len(obstacles)-1)].instance())
 				
@@ -74,10 +77,24 @@ func generateGrid():
 			
 
 			tiles[x].append(tile)
+	canWin = true
 		
-
+func victory():
+	get_tree().change_scene("res://Assets/Scenes/winScreen.tscn")
+	
 func spawnTent(tile, number):
-	tile.get_node(".").addContent(tents[number].instance())
+	if number == 0:
+		playerTents+=1
+	spawnedTentsCount+=1
+	if (playerTents == spawnedTentsCount and canWin):
+		#Victory
+		victory()
+
+	var tent = tents[number].instance()
+	tile.get_node(".").addContent(tent)
+	
+	return tent
+	
 	
 func getTileWPos(worldPos):
 	var x = int((worldPos.x + gridOffset) / tileSize)
@@ -88,6 +105,7 @@ func getTileWPos(worldPos):
 	if (y <= 0): y = 0
 	return tiles[x][y];
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func removeTent(number):
+	if number == 0:
+		playerTents-=1
+	spawnedTentsCount-=1
