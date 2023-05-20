@@ -5,6 +5,7 @@ extends Node2D
 var noise = OpenSimplexNoise.new()
 var rng = RandomNumberGenerator.new()
 var angle = 0
+
 #Home tent position
 var target
 var max_dist = 50
@@ -40,6 +41,7 @@ func startMoving():
 	while true:
 		yield(get_tree().create_timer(0.8), "timeout")
 		changeDirection()
+		if !is_instance_valid(target):return
 		if (target.is_in_group("Player")):
 			isMoving = true
 		else:
@@ -54,6 +56,7 @@ func changeDirection():
 func move(delta):
 		# Define some speed
 	var speed = 100.0
+	if !is_instance_valid(target):return
 	var go_around_point = target.position
 	# Calculate direction:
 	# the Y coordinate must be inverted,
