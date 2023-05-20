@@ -42,3 +42,6 @@ func _recruitSoldiers():
 		soldier.modulate = Color(10, 1, 1)
 	
 	soldiers.clear()
+	get_parent().resetTimer()
+
+

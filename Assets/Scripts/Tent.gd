@@ -27,8 +27,7 @@ func _ready():
 	self.add_to_group("Tents")
 	spawnableUnits = [unit0, unit1, unit2, unit3]
 	add_child(timer)
-	timer.start()
-	timer.set_wait_time(getNextWaitTime())
+	resetTimer()
 	timer.connect("timeout", self, "_handleSpawning")
 	grid = get_tree().current_scene.get_node("GridManager")
 	
@@ -42,7 +41,6 @@ func _process(delta):
 
 # Called by timer countdown. Spawns the unit currently in production.
 func _handleSpawning():
-	timer.stop()
 	var unit = spawnableUnits[ownerPlayerNumber]
 
 	var spawn = unit.instance()
@@ -52,8 +50,7 @@ func _handleSpawning():
 	spawn.position.y = self.get_parent().position.y
 	soldiers.append(spawn)
 	
-	timer.set_wait_time(getNextWaitTime())
-	timer.start()
+	resetTimer()
 	#print(timer.get_time_left())
 	
 	
@@ -61,9 +58,8 @@ func _handleSpawning():
 # Set the next produced unit and reset timer.
 func changeProduction(selection):
 	if selection >= 0 && selection < spawnableUnits.size():
-		timer.stop()
 		currentProduction = selection
-		timer.start()
+		resetTimer()
 	
 	
 	
@@ -89,3 +85,9 @@ func addSoldiers(tempSoldiers):
 
 func getSoldiers():
 	return soldiers
+
+
+func resetTimer():
+	timer.stop()
+	timer.set_wait_time(getNextWaitTime())
+	timer.start()
