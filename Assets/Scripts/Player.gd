@@ -16,7 +16,7 @@ func _ready():
 	width = grid.width
 	heigth = grid.height
 	start_coord_x = grid.tileSize
-	start_coord_y = grid.tileSize
+	start_coord_y = 10
 	position.x = start_coord_x
 	position.y = start_coord_y
 	cell_width = grid.tileSize
