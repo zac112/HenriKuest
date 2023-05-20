@@ -52,7 +52,9 @@ func _killTroops():
 		
 	if defenders.size() == 0:
 		print("Teltta tyhjä")
-		get_parent().setOwnership(0)
+		var tempAttackers = attackers.duplicate()
+		var newTent = get_parent().setOwnership(0)
+		newTent.addSoldiers(tempAttackers)
 		combat = false
 		return
 	
