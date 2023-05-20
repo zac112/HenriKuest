@@ -1,9 +1,37 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Scripts/Fighter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Soldiers/Yellow_Soldiers.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scripts/FighterAnim.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scenes/Particles2D.gd" type="Script" id=4]
 
+[sub_resource type="Curve" id=2]
+max_value = 465.74
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.481818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+render_priority = 4
+trail_divisor = 5
+trail_size_modifier = SubResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+direction = Vector3( 5, 5, 1324 )
+spread = 52.47
+flatness = 0.72
+gravity = Vector3( -16, 2, 0 )
+angular_velocity = -505.07
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = -5.22
+tangential_accel_random = 0.22
+scale = 4.0
+color = Color( 1, 0.321569, 0.270588, 1 )
+hue_variation = -1.0
+hue_variation_random = 0.12
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -18,6 +46,18 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 13, 16 )
 script = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="Square"]
+position = Vector2( -9, 0 )
+rotation = 1.42419
+scale = Vector2( 1e-05, 0.1 )
+amount = 40
+speed_scale = 3.45
+randomness = 0.1
+visibility_rect = Rect2( -5, 5, 5, 6 )
+local_coords = false
+process_material = SubResource( 4 )
+script = ExtResource( 4 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
