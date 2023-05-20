@@ -9,6 +9,7 @@ var unit1 = load("res://Assets/Scenes/Soldier.tscn")
 var unit2 = load("res://Assets/Scenes/Soldier2.tscn")
 var unit3 = load("res://Assets/Scenes/Soldier3.tscn")
 var ownerPlayerNumber
+var soldiers = []
 
 export var timeBetweenSpawns = 5
 
@@ -36,6 +37,7 @@ func _handleSpawning():
 	spawn.position.x = self.position.x + 10
 	spawn.position.y = self.position.y + 10
 	add_child(spawn)
+	soldiers.append(spawn)
 	
 	
 # Set the next produced unit and reset timer.
@@ -56,3 +58,6 @@ func _destroy():
 	remove_child(timer)
 	queue_free()
 	
+
+func getSoldiers():
+	return soldiers
