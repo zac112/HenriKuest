@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://Assets/Scripts/tentZIndex.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Tents.png" type="Texture" id=2]
 
 [node name="Node2D2" type="Node2D"]
@@ -9,3 +10,4 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 53, 0, 13, 17 )
+script = ExtResource( 1 )

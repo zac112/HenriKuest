@@ -14,12 +14,10 @@ func _on_body_entered(body:Node):
 	if body.is_in_group("Player"):
 		player = body
 		recruitable = true
-		print("Pelaaja teltan lähellä")
 
 func _on_body_exited(body:Node):
 	if body.is_in_group("Player"):
 		recruitable = false
-		print("Pelaaja poistui teltan läheltä")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -35,10 +33,11 @@ func _recruitSoldiers():
 	var soldiers = get_parent().getSoldiers()
 	
 	for soldier in soldiers:
-		#soldier.get_parent().remove_child(soldier)
-		#player.add_child(soldier)
 		soldier.setTarget(player)
 		player.getFollowers().append(soldier)
 		soldier.modulate = Color(10, 1, 1)
 	
 	soldiers.clear()
+	get_parent().resetTimer()
+
+
