@@ -76,6 +76,9 @@ func generateGrid():
 			tiles[x].append(tile)
 		
 
+func spawnTent(tile, number):
+	tile.get_node(".").addContent(tents[number].instance())
+	
 func getTileWPos(worldPos):
 	var x = int((worldPos.x + gridOffset) / tileSize)
 	var y = int((worldPos.y + gridOffset) / tileSize)

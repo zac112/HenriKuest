@@ -44,7 +44,10 @@ func startMoving():
 	while true:
 		yield(get_tree().create_timer(0.8), "timeout")
 		changeDirection()
-		isMoving = !isMoving
+		if (target.is_in_group("Player")):
+			isMoving = true
+		else:
+			isMoving = !isMoving
 	
 func changeDirection():
 	rng.randomize()

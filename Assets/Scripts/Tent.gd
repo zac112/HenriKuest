@@ -69,6 +69,9 @@ func changeProduction(selection):
 # Change the ownership of the tent.
 func setOwnership(targetPlayerNumber):
 	ownerPlayerNumber = targetPlayerNumber
+	_destroy()
+	grid.spawnTent(get_parent(), targetPlayerNumber)
+	print("Vaihdetaan omistaja")
 	
 	
 # Destroys the tent and its child timer.
