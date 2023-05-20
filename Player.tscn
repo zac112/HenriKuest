@@ -40,4 +40,6 @@ scale = Vector2( 3.764, -0.866 )
 frames = SubResource( 6 )
 animation = "right"
 
+[node name="Node" type="Node" parent="Player"]
+
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
