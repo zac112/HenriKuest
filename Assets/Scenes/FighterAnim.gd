@@ -8,6 +8,7 @@ var jumpSpeed = 20
 var jumpAmount = 120
 var time = 0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -18,5 +19,6 @@ func _ready():
 func _process(delta):
 	time += delta
 	var movement = cos(time * jumpSpeed) * jumpAmount
-
-	position.y += movement * delta
+	
+	if get_parent().isMoving:
+		position.y += movement * delta

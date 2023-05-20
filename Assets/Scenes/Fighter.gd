@@ -11,10 +11,12 @@ var go_around_point = home_tent
 var max_dist = 50
 
 #Fighters won't move unless true
-var moveTime = false
+
+var isMoving = false
 var cell_width
 var width #width of grid
 var height #height of grid
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,9 +37,9 @@ func setTent(position):
 
 func startMoving():
 	while true:
-		yield(get_tree().create_timer(0.67), "timeout")
+		yield(get_tree().create_timer(0.8), "timeout")
 		changeDirection()
-		moveTime = !moveTime
+		isMoving = !isMoving
 	
 func changeDirection():
 	rng.randomize()
@@ -77,7 +79,7 @@ func move(delta):
 
 	
 func _process(delta):
-	if moveTime:
+	if isMoving:
 		move(delta)
 	
 
