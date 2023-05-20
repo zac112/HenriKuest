@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scripts/Tent.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Tents.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Scripts/TentFillbar.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/Square.png" type="Texture" id=4]
 
 [node name="Node2D3" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,3 +14,18 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 39, 0, 13, 17 )
+
+[node name="FillBar" type="Sprite" parent="."]
+position = Vector2( -1, -30 )
+scale = Vector2( 0.7, 0.2 )
+texture = ExtResource( 4 )
+offset = Vector2( 2.38419e-07, 0 )
+
+[node name="Light2D" type="Light2D" parent="FillBar"]
+position = Vector2( -32, 0 )
+scale = Vector2( 1.012, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( 31.4286, 0 )
+color = Color( 0.494118, 0.909804, 0.113725, 1 )
+mode = 2
+script = ExtResource( 3 )

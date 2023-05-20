@@ -36,7 +36,7 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	
-	move_and_collide(velocity*delta)
+	move_and_slide(velocity)
 	
 	position.x = clamp(position.x, start_coord_x, width*cell_width)
 	position.y = clamp(position.y, start_coord_y, heigth*cell_width)
