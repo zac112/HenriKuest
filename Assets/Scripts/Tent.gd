@@ -8,9 +8,9 @@ var unit0 = load("res://Assets/Scenes/Soldier_ally.tscn")
 var unit1 = load("res://Assets/Scenes/Soldier.tscn")
 var unit2 = load("res://Assets/Scenes/Soldier2.tscn")
 var unit3 = load("res://Assets/Scenes/Soldier3.tscn")
-var ownerPlayerNumber
 var soldiers = []
 
+export var ownerPlayerNumber = 0
 export var timeBetweenSpawns = 20
 
 
@@ -31,7 +31,7 @@ func _process(delta):
 
 # Called by timer countdown. Spawns the unit currently in production.
 func _handleSpawning():
-	var unit = spawnableUnits[currentProduction]
+	var unit = spawnableUnits[ownerPlayerNumber]
 
 	var spawn = unit.instance()
 	spawn.position.x = 0

@@ -5,6 +5,7 @@
 
 [node name="Node2D3" type="Node2D"]
 script = ExtResource( 1 )
+ownerPlayerNumber = 3
 
 [node name="Tents" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
