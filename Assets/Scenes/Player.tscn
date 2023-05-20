@@ -17,7 +17,7 @@ scale = 4.0
 color = Color( 0.34902, 0.878431, 0.054902, 1 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 4, 4.58335 )
+extents = Vector2( 4, 2.62501 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -49,7 +49,7 @@ local_coords = false
 process_material = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
-position = Vector2( 0, 5.58335 )
+position = Vector2( 0, 20.875 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 3 )
 
@@ -59,6 +59,7 @@ frames = SubResource( 4 )
 animation = "right"
 
 [node name="CommandArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CommandArea"]
 scale = Vector2( 5, 5 )
