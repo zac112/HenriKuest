@@ -1,10 +1,5 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 const tile_path = preload("res://Assets/prefabs/Tile.tscn")
 const leftup = preload("res://Assets/Sprites/Grid sprites/1.png")
 const leftdown = preload("res://Assets/Sprites/Grid sprites/3.png")
@@ -27,8 +22,8 @@ preload("res://Assets/Scenes/Obstacle2.tscn")]
 #makes variables editable from godot editor
 export var width = 60
 export var height = 40
-
 export var tileSize = 48
+
 var gridOffset = -48
 var spawnedTentsCount = 0
 var playerTents = 0
@@ -64,7 +59,6 @@ func generateGrid():
 			var pos = Vector2(x * tileSize - gridOffset, y * tileSize - gridOffset)
 			
 			var tile = tile_path.instance()
-			#tile.get_node("Sprite").texture = 
 			self.add_child(tile)
 
 			
@@ -87,10 +81,6 @@ func generateGrid():
 			elif rng.randi_range(0,10) < 2:
 				tile.addContent(obstacles[rng.randi_range(0,len(obstacles)-1)].instance())
 				obstaclePositions.append(Vector2(x,y))
-				
-			#var darker = ((x + y) % 2) == 1
-			#if(darker):
-			#	tile.get_node("Sprite").modulate = Color(0, 0, 1)
 			
 
 			tiles[x].append(tile)
@@ -104,9 +94,8 @@ func spawnTent(tile, number):
 		playerTents+=1
 	if number != 4:
 		spawnedTentsCount+=1
-	print("Player " + str(playerTents) + " total: " + str(spawnedTentsCount))
+		
 	if (playerTents >= spawnedTentsCount and canWin):
-		#Victory
 		victory()
 
 	var tent = tents[number].instance()
@@ -143,17 +132,15 @@ func removeTent(number):
 func findPath(start:Vector2, end:Vector2):
 	start = WPosToCoord(start)
 	end = WPosToCoord(end)
-	print(start,end)
 	var stack = [start]
 	var path = {start:null}
 	var visited = {}
 	
 	while stack:
 		var pos = stack.pop_front()
-		if pos in visited:
-			continue		
-			
+		if pos in visited: continue			
 		
+		#If found path
 		if pos.is_equal_approx(end):
 			var result = [end]
 			while result.back() != null:
@@ -164,30 +151,26 @@ func findPath(start:Vector2, end:Vector2):
 						result.append(fromPos)
 						break
 								
-			result.pop_back()
+			result.pop_back() #remove null at end
 			result.invert()
-			print(result)
 			for i in range(len(result)):
 				result.append(CoordToWpos(result.pop_front()))
-			print(result)
 			return result
 		
+		#get neighbors
 		for p in [[1,0],[-1,0],[0,1],[0,-1]]:
 			var x = p[0]+pos.x
 			var y = p[1]+pos.y
-			if x < 0 or y < 0 or x >= width or y >= height:
-				continue
-			
 			var newPos = Vector2(x,y) 
-		
-			if newPos in obstaclePositions:
-				continue
-			if newPos in visited:
-				continue
+			
+			if x < 0 or y < 0 or x >= width or y >= height: continue
+			if newPos in obstaclePositions: continue
+			if newPos in visited: continue
 				
 			visited[pos]=""
 			path[newPos] = pos
 			stack.append(newPos)
+			
 	print("Did not find path")
 	return []
 	

@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Reference",
 "class": "Fighter",
 "language": "GDScript",
-"path": "res://Assets/Scenes/Fighter.gd"
+"path": "res://Assets/Scripts/Fighter.gd"
 }, {
 "base": "Node",
 "class": "Tile",
