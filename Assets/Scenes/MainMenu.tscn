@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Sprites/main-menu-background.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=2]
@@ -15,6 +15,12 @@ size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 30
+outline_size = 2
+outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 30
 outline_size = 2
 outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
@@ -57,3 +63,14 @@ custom_fonts/font = SubResource( 3 )
 text = "Credits:
 Art: Onni Hassila
 Coding: Erno Lokkila, Andrei Belogurov, Timo"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 220.0
+margin_top = 540.0
+margin_right = 834.0
+margin_bottom = 717.0
+custom_fonts/font = SubResource( 4 )
+text = "How to play:
+Press C when close to village in order to
+command units.
+Go near enemy villages to start fighting"
