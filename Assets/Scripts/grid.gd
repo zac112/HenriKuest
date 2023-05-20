@@ -20,9 +20,8 @@ const tent_destroyed = preload("res://Assets/Scenes/Tent_destroyed.tscn")
 
 var tiles = [[]]
 var tents 
-var obstacles = [
-	preload("res://Assets/Scenes/Obstacle.tscn"),
-	preload("res://Assets/Scenes/Obstacle2.tscn")]
+var obstacles = [preload("res://Assets/Scenes/Obstacle.tscn"),
+preload("res://Assets/Scenes/Obstacle2.tscn")]
 
 #makes variables editable from godot editor
 export var width = 60
