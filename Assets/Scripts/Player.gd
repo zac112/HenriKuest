@@ -1,21 +1,24 @@
 extends KinematicBody2D
 signal hit
 
-export var width = 12
-export var heigth = 9
-export var cell_width = 40
-export var start_coord_x = 40
-export var start_coord_y = 40
+var width = 12
+var heigth = 9
+var cell_width = 40
+var start_coord_x = 40
+var start_coord_y = 40
 export var speed = 200
 
 func _ready():
-	position.x = start_coord_x
-	position.y = start_coord_y
 	$CollisionShape2D.disabled = false
 	$AnimatedSprite.animation = "default"
 	var grid = get_parent().get_node("GridManager")
 	width = grid.width
 	heigth = grid.height
+	start_coord_x = grid.tileSize
+	start_coord_y = grid.tileSize
+	position.x = start_coord_x
+	position.y = start_coord_y
+	cell_width = grid.tileSize
 
 
 func _process(delta):
