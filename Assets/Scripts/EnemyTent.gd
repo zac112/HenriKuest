@@ -2,8 +2,8 @@ extends Node
 
 
 # Declare member variables here. Examples:
-var recruitable = false
 var player
+var combat = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,30 +13,18 @@ func _ready():
 func _on_body_entered(body:Node):
 	if body.is_in_group("Player"):
 		player = body
-		recruitable = true
-		print("Pelaaja teltan lähellä")
+		combat = true
+		print("Pelaaja vihollisteltan lähellä")
 
 func _on_body_exited(body:Node):
 	if body.is_in_group("Player"):
-		recruitable = false
-		print("Pelaaja poistui teltan läheltä")
+		combat = false
+		print("Pelaaja poistui vihollisteltan läheltä")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_checkInput()
+	_checkForCombat()
 	
 
-func _checkInput():
-	if Input.is_action_just_pressed("command_troops") && recruitable:
-		_recruitSoldiers()
-
-
-func _recruitSoldiers():
-	var soldiers = get_parent().getSoldiers()
-	
-	for soldier in soldiers:
-		soldier.get_parent().remove_child(soldier)
-		player.add_child(soldier)
-		print(soldier.name)
-	
-	soldiers.clear()
+func _checkForCombat():
+	pass
