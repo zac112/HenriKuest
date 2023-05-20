@@ -1,12 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/RotatedPlayer.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Scripts/PlayerAbilities.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sprites/Player.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 31.06, 8.45133 )
+[sub_resource type="ParticlesMaterial" id=5]
+render_priority = 4
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+color = Color( 0.34902, 0.878431, 0.054902, 1 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4, 4.58335 )
+
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
@@ -19,27 +33,38 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
-__meta__ = {
-"_edit_vertical_guides_": [ -396.0 ]
-}
+[sub_resource type="CircleShape2D" id=6]
 
-[node name="Player" type="Area2D" parent="."]
-position = Vector2( 84, 57 )
-scale = Vector2( 0.53123, -2.30733 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 82, 48 )
+scale = Vector2( 3, 3 )
+collision_mask = 4
+script = ExtResource( 1 )
+width = 20
+heigth = 15
+cell_width = 48
+start_coord_x = 48
+start_coord_y = 48
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0.941208, 0.216698 )
-shape = SubResource( 5 )
+[node name="Particles2D" type="Particles2D" parent="."]
+scale = Vector2( 0.111111, 0.111111 )
+amount = 40
+lifetime = 3.0
+speed_scale = 3.45
+local_coords = false
+process_material = SubResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-scale = Vector2( 3.764, -0.866 )
-frames = SubResource( 6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5.58335 )
+shape = SubResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
 animation = "right"
 
-[node name="Node" type="Node" parent="Player"]
+[node name="CommandArea" type="Area2D" parent="."]
+script = ExtResource( 3 )
 
-[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CommandArea"]
+scale = Vector2( 5, 5 )
+shape = SubResource( 6 )
