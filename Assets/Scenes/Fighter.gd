@@ -9,7 +9,8 @@ var noise = OpenSimplexNoise.new()
 var angle = 0
 
 #Fighters won't move unless true
-var moveTime = false
+var isMoving = false
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,9 +24,9 @@ func _ready():
 
 func startMoving():
 	while true:
-		yield(get_tree().create_timer(0.67), "timeout")
+		yield(get_tree().create_timer(0.8), "timeout")
 		changeDirection()
-		moveTime = !moveTime
+		isMoving = !isMoving
 	
 func changeDirection():
 	var dir = noise.get_noise_2d(position.x, position.y)
@@ -44,7 +45,7 @@ func move(delta):
 	position = (position + dir * (speed * delta))
 	
 func _process(delta):
-	if moveTime:
+	if isMoving:
 		move(delta)
 	
 
