@@ -9,7 +9,7 @@ var attackers = []
 var defenders = []
 var battleTimer = Timer.new()
 var parentSquare
-export var minDefendersToAttack = 2
+export var minDefendersToAttack = 5
 var attackerID
 export var AIavatar = preload("res://Assets/Scenes/PlayerAI.tscn")
 var symbolShowing = false

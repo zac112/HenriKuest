@@ -14,6 +14,7 @@ var defenders = []
 var battleTimer = Timer.new()
 var parentSquare
 var attackerID = 0
+var symbolShowing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +26,6 @@ func _ready():
 	add_child(battleTimer)
 	battleTimer.wait_time = 1
 	battleTimer.connect("timeout", self, "_killTroops")
-	battleTimer.start()
 	
 	symbol = battle_symbol.instance()
 
@@ -34,7 +34,7 @@ func _on_body_entered(body:Node):
 		attackingPlayers.append(body)
 		attackerID = body.attackerID
 		_getAttackersFromPlayer(body)
-		
+		combat = true
 		
 	if body.is_in_group("Player"):
 		player = body
@@ -47,7 +47,14 @@ func _on_body_exited(body:Node):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	_checkInput()
-	
+	if (combat == true && battleTimer.is_stopped()):
+		symbolShowing = true
+		get_parent().add_child(symbol)
+		battleTimer.start()		
+		
+	if (combat == false and symbolShowing):
+		symbolShowing = false
+		get_parent().remove_child(symbol)
 
 func _checkInput():
 	if Input.is_action_just_pressed("command_troops") && recruitable:
@@ -77,10 +84,6 @@ func _getAttackersFromPlayer(attackingPlayer):
 
 func _killTroops():
 	if attackers == null:
-		for attackingP in attackingPlayers:
-			if is_instance_valid(attackingP):
-				defenders.append_array(attackingP.getFollowers())
-				attackingP.queue_free()
 		return
 		
 	print("Killed troops; defenders ",defenders.size(), " attaker ",attackers.size(), "")

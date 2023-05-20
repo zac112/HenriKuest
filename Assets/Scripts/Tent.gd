@@ -81,7 +81,7 @@ func addSoldiers(tempSoldiers):
 	for soldier in tempSoldiers:
 		soldier.modulate = Color(1, 1, 1)
 		soldier.setTarget(self.get_parent())
-	soldiers = tempSoldiers
+	soldiers.append_array(tempSoldiers)
 
 func getSoldiers():
 	return soldiers
