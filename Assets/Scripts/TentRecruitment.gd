@@ -35,8 +35,10 @@ func _recruitSoldiers():
 	var soldiers = get_parent().getSoldiers()
 	
 	for soldier in soldiers:
-		soldier.get_parent().remove_child(soldier)
-		player.add_child(soldier)
+		#soldier.get_parent().remove_child(soldier)
+		#player.add_child(soldier)
+		soldier.setTarget(player)
+		soldier.modulate = Color(10, 1, 1)
 		print(soldier.name)
 	
 	soldiers.clear()
