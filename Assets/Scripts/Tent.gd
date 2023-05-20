@@ -15,13 +15,20 @@ export var timeBetweenSpawns = 20
 onready var mask = get_node("FillBar/Light2D")
 var grid
 
+func getNextWaitTime():
+	var x = len(soldiers)
+	var a = 1.17
+	var b = -1.83
+	var c = 3
+	return a*x*x+b*x+c
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.add_to_group("Tents")
 	spawnableUnits = [unit0, unit1, unit2, unit3]
 	add_child(timer)
 	timer.start()
-	timer.wait_time = timeBetweenSpawns
+	timer.set_wait_time(getNextWaitTime())
 	timer.connect("timeout", self, "_handleSpawning")
 	grid = get_tree().current_scene.get_node("GridManager")
 	
@@ -35,6 +42,7 @@ func _process(delta):
 
 # Called by timer countdown. Spawns the unit currently in production.
 func _handleSpawning():
+	timer.stop()
 	var unit = spawnableUnits[ownerPlayerNumber]
 
 	var spawn = unit.instance()
@@ -42,8 +50,12 @@ func _handleSpawning():
 	grid.add_child(spawn)
 	spawn.position.x = self.get_parent().position.x
 	spawn.position.y = self.get_parent().position.y
-	print(str(self.position.x) + " " + str(self.position.y))
 	soldiers.append(spawn)
+	
+	timer.set_wait_time(getNextWaitTime())
+	timer.start()
+	print(timer.get_time_left())
+	
 	
 	
 # Set the next produced unit and reset timer.
