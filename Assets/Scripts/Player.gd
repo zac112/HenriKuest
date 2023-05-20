@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 signal hit
 
 export var width = 12
