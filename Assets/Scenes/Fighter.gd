@@ -11,16 +11,12 @@ var go_around_point = home_tent
 var max_dist = 50
 
 #Fighters won't move unless true
-<<<<<<< HEAD
+
 var isMoving = false
-
-
-=======
-var moveTime = false
 var cell_width
 var width #width of grid
 var height #height of grid
->>>>>>> 96279efac56be7458cb3969f3d7d65c5816dced2
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
