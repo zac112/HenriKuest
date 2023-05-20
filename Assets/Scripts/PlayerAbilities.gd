@@ -35,3 +35,5 @@ func commandSoldiers():
 	for soldier in nearbySoldiers:
 		soldier.get_parent().remove_child(soldier)
 		self.get_parent().add_child(soldier)
+		print(soldier.name + " seuraa.")
+		

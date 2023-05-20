@@ -52,7 +52,6 @@ position = Vector2( 511, 298 )
 
 [node name="Player" type="Area2D" parent="."]
 position = Vector2( 82, 48 )
-scale = Vector2( 3, 3 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -72,9 +71,11 @@ local_coords = false
 process_material = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2( 3, 3 )
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+scale = Vector2( 3, 3 )
 frames = SubResource( 4 )
 animation = "right"
 
