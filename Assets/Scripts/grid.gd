@@ -41,7 +41,7 @@ func generateGrid():
 	for x in range(width):
 		tiles.append([])
 		for y in range(height):
-			print(str(x) + " " + str(y))
+			#print(str(x) + " " + str(y))
 			var pos = Vector2(x * tileSize - gridOffset, y * tileSize - gridOffset)
 			
 			var tile = tile_path.instance()

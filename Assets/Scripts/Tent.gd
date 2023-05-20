@@ -54,7 +54,7 @@ func _handleSpawning():
 	
 	timer.set_wait_time(getNextWaitTime())
 	timer.start()
-	print(timer.get_time_left())
+	#print(timer.get_time_left())
 	
 	
 	

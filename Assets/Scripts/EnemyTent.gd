@@ -5,7 +5,7 @@ extends Node
 var player
 var combat = false
 var attackers = []
-var defenders
+var defenders = []
 var battleTimer = Timer.new()
 var parentSquare
 
@@ -38,7 +38,8 @@ func _process(delta):
 
 func _getAttackersFromPlayer():
 	var playerSoldiers = player.getFollowers()
-	for soldier in playerSoldiers:
+	var tempCopy = playerSoldiers.duplicate()
+	for soldier in tempCopy:
 		attackers.append(soldier)
 		soldier.setTarget(parentSquare)
 		playerSoldiers.clear()
