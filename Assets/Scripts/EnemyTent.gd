@@ -14,7 +14,7 @@ func _ready():
 	parentSquare = get_parent().get_parent()
 	defenders = get_parent().getSoldiers()
 	add_child(battleTimer)
-	battleTimer.wait_time = 2
+	battleTimer.wait_time = 1
 	battleTimer.connect("timeout", self, "_killTroops")
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")

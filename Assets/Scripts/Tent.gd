@@ -83,6 +83,8 @@ func _destroy():
 	queue_free()
 	
 func addSoldiers(tempSoldiers):
+	for soldier in tempSoldiers:
+		soldier.modulate = Color(1, 1, 1)
 	soldiers = tempSoldiers
 
 func getSoldiers():
