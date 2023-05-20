@@ -39,10 +39,12 @@ func _process(delta):
 	if (combat == true && battleTimer.is_stopped()):
 		battleTimer.start()
 		
-	#if combat == false && defenders.size() >= minDefendersToAttack:
-		#_attack()
+	if combat == false && defenders.size() >= minDefendersToAttack:
+		_attack()
 		symbolShowing = true
 		get_parent().add_child(symbol)
+		
+		
 	if (combat == false and symbolShowing):
 		symbolShowing = false
 		get_parent().remove_child(symbol)
@@ -58,9 +60,11 @@ func _attack():
 	
 	var closestTent = playerTents[0]
 	
-	#for tent in playerTents:
-		#if tent.get_global_pos().distance_to(parentSquare) < closestTent.get_global_pos().distance_to(parentSquare):
-			#closestTent = tent
+	#print(closestTent.get_parent().position.distance_to(parentSquare.position))
+	
+	for tent in playerTents:
+		if tent.get_parent().position.distance_to(parentSquare.position) < closestTent.get_parent().position.distance_to(parentSquare.position):
+			closestTent = tent
 	
 	for defender in defenders:
 		defender.setTarget(closestTent.get_parent())
