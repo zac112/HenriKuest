@@ -9,6 +9,7 @@ var attackers = []
 var defenders = []
 var battleTimer = Timer.new()
 var parentSquare
+export var minDefendersToAttack = 1
 var symbolShowing = false
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +20,8 @@ func _ready():
 	battleTimer.wait_time = 1
 	battleTimer.connect("timeout", self, "_killTroops")
 	connect("body_entered", self, "_on_body_entered")
+	#connect("body_exited", self, "_on_body_exited")
+
 	connect("body_exited", self, "_on_body_exited")
 	symbol = battle_symbol.instance()
 	
@@ -27,16 +30,17 @@ func _on_body_entered(body:Node):
 		player = body
 		combat = true
 		_getAttackersFromPlayer()
-		print("Pelaaja vihollisteltan lähellä")
 
 func _on_body_exited(body:Node):
-	if body.is_in_group("Player") && attackers.size() == 0:
-		print("Pelaaja poistui vihollisteltan läheltä")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (combat == true && battleTimer.is_stopped()):
 		battleTimer.start()
+		
+	#if combat == false && defenders.size() >= minDefendersToAttack:
+		#_attack()
 		symbolShowing = true
 		get_parent().add_child(symbol)
 	if (combat == false and symbolShowing):
@@ -45,6 +49,33 @@ func _process(delta):
 		
 
 	
+
+func _attack():
+	var playerTents = _getPlayerTents()
+	
+	if playerTents.size() == 0:
+		return
+	
+	var closestTent = playerTents[0]
+	
+	#for tent in playerTents:
+		#if tent.get_global_pos().distance_to(parentSquare) < closestTent.get_global_pos().distance_to(parentSquare):
+			#closestTent = tent
+	
+	for defender in defenders:
+		defender.setTarget(closestTent.get_parent())
+	
+	defenders.clear()
+	
+	
+
+func _getPlayerTents():
+	var playerTents = []
+	
+	for member in get_tree().get_nodes_in_group("PlayerTents"):
+		playerTents.append(member)
+	
+	return playerTents
 
 func _getAttackersFromPlayer():
 	var playerSoldiers = player.getFollowers()
@@ -56,12 +87,10 @@ func _getAttackersFromPlayer():
 
 
 func _killTroops():
-	print("Combat in progress!")
 	if attackers == null:
 		return
 		
 	if defenders.size() == 0:
-		print("Teltta tyhjä")
 		var tempAttackers = attackers.duplicate()
 		var newTent = get_parent().setOwnership(0)
 		newTent.addSoldiers(tempAttackers)
@@ -71,9 +100,7 @@ func _killTroops():
 	if attackers.size() == 0 || defenders.size() == 0:
 		combat = false
 		battleTimer.stop()
-		print("Combat ended")
 	else:
 		attackers.pop_back().queue_free()
 		defenders.pop_back().queue_free()
-		print("Troops killed")
 		
