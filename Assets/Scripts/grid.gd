@@ -66,7 +66,7 @@ func generateGrid():
 			tile.get_node("Sprite").texture = texture
 			
 			
-			if rng.randi_range(0,10) < 2:
+			if rng.randi_range(0,100) < 5:
 				spawnTent(tile, rng.randi_range(0,len(tents)-1))
 			elif rng.randi_range(0,10) < 2:
 				tile.get_node(".").addContent(obstacles[rng.randi_range(0,len(obstacles)-1)].instance())
@@ -85,8 +85,10 @@ func victory():
 func spawnTent(tile, number):
 	if number == 0:
 		playerTents+=1
-	spawnedTentsCount+=1
-	if (playerTents == spawnedTentsCount and canWin):
+	if number != 4:
+		spawnedTentsCount+=1
+	print("Player " + str(playerTents) + " total: " + str(spawnedTentsCount))
+	if (playerTents >= spawnedTentsCount and canWin):
 		#Victory
 		victory()
 
