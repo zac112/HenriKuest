@@ -26,7 +26,7 @@ func intro():
 		fade_out(get_node(currentLabel))
 		yield(get_tree().create_timer(1.0), "timeout")
 		labelnumber += 1
-		
+	get_node("GameLogo").visible = true
 	
 
 
@@ -36,6 +36,14 @@ func _ready():
 
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Label3_draw():
+	pass # Replace with function body.
+
+
+

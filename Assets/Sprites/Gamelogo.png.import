@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Untitled.png-1068365179bf12c7832f72724f38a241.stex"
+path="res://.import/Gamelogo.png-d555441b11bb0d98d5a92eb2fb674a06.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cutscenes/Background/Untitled.png"
-dest_files=[ "res://.import/Untitled.png-1068365179bf12c7832f72724f38a241.stex" ]
+source_file="res://Assets/Sprites/Gamelogo.png"
+dest_files=[ "res://.import/Gamelogo.png-d555441b11bb0d98d5a92eb2fb674a06.stex" ]
 
 [params]
 
