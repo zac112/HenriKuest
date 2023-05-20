@@ -1,6 +1,7 @@
 extends Node
 
-
+const battle_symbol = preload("res://Assets/Scenes/battle_symbol.tscn")
+var symbol
 # Declare member variables here. Examples:
 var player
 var combat = false
@@ -8,6 +9,7 @@ var attackers = []
 var defenders = []
 var battleTimer = Timer.new()
 var parentSquare
+var symbolShowing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +20,8 @@ func _ready():
 	battleTimer.connect("timeout", self, "_killTroops")
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
-
+	symbol = battle_symbol.instance()
+	
 func _on_body_entered(body:Node):
 	if body.is_in_group("Player"):
 		player = body
@@ -34,6 +37,13 @@ func _on_body_exited(body:Node):
 func _process(delta):
 	if (combat == true && battleTimer.is_stopped()):
 		battleTimer.start()
+		symbolShowing = true
+		get_parent().add_child(symbol)
+	if (combat == false and symbolShowing):
+		symbolShowing = false
+		get_parent().remove_child(symbol)
+		
+
 	
 
 func _getAttackersFromPlayer():
