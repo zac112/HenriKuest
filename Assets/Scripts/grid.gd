@@ -20,6 +20,7 @@ const tent_destroyed = preload("res://Assets/Scenes/Tent_destroyed.tscn")
 
 var tiles = [[]]
 var tents 
+var obstaclePositions = []
 var obstacles = [preload("res://Assets/Scenes/Obstacle.tscn"),
 preload("res://Assets/Scenes/Obstacle2.tscn")]
 
@@ -33,10 +34,25 @@ var spawnedTentsCount = 0
 var playerTents = 0
 var canWin = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tents = [tent,tent2,tent3,tent4,tent_destroyed]
+	tents = [tent,tent2,tent3,tent4]
 	generateGrid()
+	
+	
+	var timer = Timer.new()
+	add_child(timer)
+	timer.connect("timeout",self,"startAI")
+	timer.set_one_shot(true)
+	timer.start()
+	
+func startAI():
+	var path = findPath(Vector2(0,0), Vector2(528,528))
+	var AI = load("res://Assets/Scenes/PlayerAI.tscn").instance()
+	add_child(AI)
+	AI.global_position = Vector2(50,50)
+	AI.travelPath(path)
 	
 
 func generateGrid():
@@ -69,7 +85,8 @@ func generateGrid():
 			if rng.randi_range(0,100) < 5:
 				spawnTent(tile, rng.randi_range(0,len(tents)-1))
 			elif rng.randi_range(0,10) < 2:
-				tile.get_node(".").addContent(obstacles[rng.randi_range(0,len(obstacles)-1)].instance())
+				tile.addContent(obstacles[rng.randi_range(0,len(obstacles)-1)].instance())
+				obstaclePositions.append(Vector2(x,y))
 				
 			#var darker = ((x + y) % 2) == 1
 			#if(darker):
@@ -98,16 +115,80 @@ func spawnTent(tile, number):
 	return tent
 	
 	
-func getTileWPos(worldPos):
+func getTile(x,y):
+	return tiles[x][y]
+	
+func CoordToWpos(coord:Vector2):
+	return Vector2(coord.x*tileSize-gridOffset, coord.y*tileSize-gridOffset)
+	
+func WPosToCoord(worldPos:Vector2):
 	var x = int((worldPos.x + gridOffset) / tileSize)
 	var y = int((worldPos.y + gridOffset) / tileSize)
 	if (x >= width): x = width - 1
 	if (y >= width): y = height - 1
 	if (x <= 0): x = 0
 	if (y <= 0): y = 0
-	return tiles[x][y];
+	return Vector2(x,y)
+	
+func getTileWPos(worldPos):
+	var pos = WPosToCoord(worldPos)	
+	return tiles[pos.x][pos.y];
 	
 func removeTent(number):
 	if number == 0:
 		playerTents-=1
 	spawnedTentsCount-=1
+	
+#Start and end in World position
+func findPath(start:Vector2, end:Vector2):
+	start = WPosToCoord(start)
+	end = WPosToCoord(end)
+	print(start,end)
+	var stack = [start]
+	var path = {start:null}
+	var visited = {}
+	
+	while stack:
+		var pos = stack.pop_front()
+		if pos in visited:
+			continue		
+			
+		
+		if pos.is_equal_approx(end):
+			var result = [end]
+			while result.back() != null:
+				for toPos in path.keys():
+					var fromPos = path[toPos]
+					if toPos.is_equal_approx(result.back()):
+						#print(fromPos," -> ",toPos)
+						result.append(fromPos)
+						break
+								
+			result.pop_back()
+			result.invert()
+			print(result)
+			for i in range(len(result)):
+				result.append(CoordToWpos(result.pop_front()))
+			print(result)
+			return result
+		
+		for p in [[1,0],[-1,0],[0,1],[0,-1]]:
+			var x = p[0]+pos.x
+			var y = p[1]+pos.y
+			if x < 0 or y < 0 or x >= width or y >= height:
+				continue
+			
+			var newPos = Vector2(x,y) 
+		
+			if newPos in obstaclePositions:
+				continue
+			if newPos in visited:
+				continue
+				
+			visited[pos]=""
+			path[newPos] = pos
+			stack.append(newPos)
+	print("Did not find path")
+	return []
+	
+	
