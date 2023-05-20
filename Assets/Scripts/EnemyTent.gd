@@ -39,7 +39,6 @@ func _process(delta):
 func _getAttackersFromPlayer():
 	var playerChildren = player.get_children()
 	for child in playerChildren:
-		print(child.name)
 		if child.is_in_group("Soldiers"):
 			attackers.append(child)
 			child.setTarget(parentTent)
