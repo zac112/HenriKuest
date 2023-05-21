@@ -77,6 +77,7 @@ func _addAttackers(newAttackers):
 		attacker.setTarget(tent.getTargetableNode())
 	
 func _endBattle():
+	battleTimer.stop()
 	var winner = _checkWinner()
 	tent.endBattle(winner[0], winner[1])
 	
