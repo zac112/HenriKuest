@@ -6,6 +6,8 @@ var heigth = 9
 var cell_width = 40
 var start_coord_x = 40
 var start_coord_y = 40
+export var player_start_x = 40
+export var player_start_y = 10
 export var speed = 200
 var followers = []
 var team = 0
@@ -18,8 +20,8 @@ func _ready():
 	heigth = grid.height
 	start_coord_x = grid.tileSize
 	start_coord_y = 10
-	position.x = start_coord_x
-	position.y = start_coord_y
+	position.x = player_start_x
+	position.y = player_start_y
 	cell_width = grid.tileSize
 
 
