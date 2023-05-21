@@ -10,7 +10,6 @@ var home_tent = Vector2(50,50)
 var target
 var go_around_point = home_tent
 var max_dist = 50
-
 #Fighters won't move unless true
 
 var isMoving = false

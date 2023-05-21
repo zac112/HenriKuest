@@ -34,7 +34,7 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=6]
 
-[node name="Player" type="KinematicBody2D" groups=["Player"]]
+[node name="Player" type="KinematicBody2D" groups=["Bishop", "Player"]]
 position = Vector2( 82, 48 )
 z_index = 30
 collision_mask = 4
