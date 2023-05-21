@@ -33,4 +33,6 @@ func getTeam():
 	return team
 
 func destroyIfNotHuman():
+	for follower in followers:
+		follower.queue_free()
 	queue_free()

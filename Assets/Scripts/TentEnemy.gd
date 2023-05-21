@@ -44,6 +44,8 @@ func _on_body_entered(body:Node):
 		add_child(currentBattle)
 		attackTimer.stop()
 		get_parent().stopSpawnTimer()
+	else:
+		body.destroyIfNotHuman()
 	
 	
 
