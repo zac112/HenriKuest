@@ -44,7 +44,8 @@ func _ready():
 
 
 func _on_Label3_draw():
-	pass # Replace with function body.
+	get_node("Gamelogo")
+
 
 
 

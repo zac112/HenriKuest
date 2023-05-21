@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Fonts/BACKTO1982.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Mainmenu/Intro.gd" type="Script" id=2]
@@ -8,15 +8,16 @@
 [ext_resource path="res://Assets/Scenes/GridManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scenes/visibility.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Scenes/viewStory.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=7]
-size = 30
+size = 28
 outline_size = 2
 outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 30
+size = 28
 outline_size = 2
 outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
 font_data = ExtResource( 5 )
@@ -26,6 +27,10 @@ size = 64
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=10]
 size = 20
 font_data = ExtResource( 5 )
 
@@ -40,10 +45,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 8 )
 
 [node name="Label2" type="Label" parent="Control"]
-margin_left = 216.0
-margin_top = 381.0
-margin_right = 822.0
-margin_bottom = 662.0
+margin_left = 223.0
+margin_top = 437.0
+margin_right = 829.0
+margin_bottom = 718.0
 custom_fonts/font = SubResource( 7 )
 text = "Credits:
 Art: Onni Hassila
@@ -53,12 +58,10 @@ Playtesting: Samuli Mäkelä
 Bad time management: Taco"
 
 [node name="Label3" type="Label" parent="Control"]
-anchor_top = -0.052
-anchor_bottom = 0.01
-margin_left = 220.0
-margin_top = 554.0
-margin_right = 834.0
-margin_bottom = 717.0
+margin_left = 223.0
+margin_top = 590.0
+margin_right = 837.0
+margin_bottom = 753.0
 custom_fonts/font = SubResource( 8 )
 text = "How to play:
 Press C when close to village in order to
@@ -75,13 +78,52 @@ valign = 1
 
 [node name="Button" type="Button" parent="Control/Victory"]
 anchor_bottom = 0.083
-margin_left = 372.0
-margin_top = 315.0
-margin_right = 675.0
-margin_bottom = 371.0
+margin_left = 223.0
+margin_top = 323.0
+margin_right = 523.0
+margin_bottom = 379.0
 custom_fonts/font = SubResource( 6 )
 text = "Play"
 script = ExtResource( 7 )
+
+[node name="Story" type="Button" parent="Control/Loss"]
+anchor_bottom = 0.083
+margin_left = 529.0
+margin_top = 323.0
+margin_right = 829.0
+margin_bottom = 379.0
+custom_fonts/font = SubResource( 6 )
+text = "Play"
+script = ExtResource( 9 )
+
+[node name="Story2" type="Button" parent="Control"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 224.0
+margin_top = 361.0
+margin_right = 830.0
+margin_bottom = 416.0
+custom_fonts/font = SubResource( 6 )
+text = "Back"
+script = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+margin_top = 131.0
+margin_right = 1173.0
+margin_bottom = 344.0
+rect_scale = Vector2( 0.873748, 1.05451 )
+custom_fonts/font = SubResource( 10 )
+text = "In a distant land not so far away, there was a Henrik.
+
+Henrik was a bishop on a chess board, he had won many battles, but one day the evil Lalli showed up.
+
+Lalli transformed the chess board into a land of dread and misery, replacing turn-based chess mechanics with 
+real-time strategy and all the pieces with flamehtrower-wielding minions.
+
+Henrik a questing man grabbed his mighty staff of wololo, and went on a quest to reclaim the land. On a HenriKuest!"
+align = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -151,4 +193,8 @@ texture = ExtResource( 3 )
 
 [node name="GridManager" parent="." instance=ExtResource( 6 )]
 
+[connection signal="pressed" from="Control/Loss/Story" to="Control" method="_on_Story_pressed"]
+[connection signal="pressed" from="Control/Loss/Story" to="CanvasLayer" method="_on_Story_pressed"]
+[connection signal="pressed" from="Control/Story2" to="Control" method="_on_Story_pressed"]
+[connection signal="pressed" from="Control/Story2" to="CanvasLayer" method="_on_Story_pressed"]
 [connection signal="visibility_changed" from="CanvasLayer/GameLogo" to="Control" method="_on_GameLogo_visibility_changed"]

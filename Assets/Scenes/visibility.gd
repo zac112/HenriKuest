@@ -20,3 +20,14 @@ func _ready():
 
 func _on_GameLogo_visibility_changed():
 	get_node(".").visible = true
+
+
+func _on_Story_pressed():
+	get_parent().get_node(".").visible = false
+	var path = get_parent().get_parent().get_node(".")
+	print(path)
+	#get_parent().get_node("CanvasLayer").visible = false
+	
+func _on_Story2_pressed():
+	get_node(".").visible = true
+	pass # Replace with function body.
