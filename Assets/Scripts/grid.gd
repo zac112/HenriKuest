@@ -35,8 +35,12 @@ var canWin = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tents = [tent,tent2,tent3,tent4,tent_destroyed]
 	if gridID == 0:
+		self.visible = false
+	else:
+		get_parent().get_node("Control").visible = false
+	tents = [tent,tent2,tent3,tent4,tent_destroyed]
+	if gridID < 2:
 		generateGrid()
 	else:
 		loadGrid(gridID)
@@ -76,9 +80,15 @@ func generateGrid():
 
 			tiles[x].append(tile)
 	canWin = true
-		
+
+func getGridID():
+	return gridID
+
 func victory():
-	get_tree().change_scene("res://Assets/Scenes/winScreen.tscn")
+	self.visible = false
+	get_parent().get_node("Player").visible = false
+	get_parent().get_node("Control").visible = true
+	# get_tree().change_scene("res://Assets/Scenes/winScreen.tscn")
 
 
 	
