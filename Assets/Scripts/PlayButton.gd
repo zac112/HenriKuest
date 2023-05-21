@@ -2,6 +2,7 @@ extends Button
 
 var sceneList = ["res://Assets/Scenes/TestLevel.tscn", "res://Assets/Scenes/Main.tscn", "res://Assets/Scenes/TestLevel.tscn"]
 
+
 func _ready():
 	var currentScene = get_parent().get_parent().get_parent().get_node("GridManager").gridID
 	if (currentScene < (len(sceneList) - 1)):
