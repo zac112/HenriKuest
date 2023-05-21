@@ -122,5 +122,5 @@ func endBattle(winnerTeam, remainingTroops):
 	var newTent = get_parent().setOwnership(winnerTeam)
 	newTent.addSoldiers(remainingTroops)
 	
-#	attackTimer.start()
-#	get_parent().startSpawnTimer()
+	#newTent.attackTimer.start()
+	newTent.startSpawnTimer()
