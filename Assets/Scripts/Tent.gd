@@ -97,12 +97,8 @@ func resetTimer():
 func isInCombat():
 	return get_node("Area2D2").currentBattle != null
 	
-
-
-# To be removed when new battle system works
-func getSoldiers():
-	return soldiers.duplicate()
-
+func getDefenderAmount():
+	return len(soldiers)
 
 func stopSpawnTimer():
 	timer.stop()

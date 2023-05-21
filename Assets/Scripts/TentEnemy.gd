@@ -57,7 +57,7 @@ func getTeam():
 	return get_parent().ownerPlayerNumber
 
 func _tryAttack():
-	var x = len(getSoldiers())
+	var x = len(get_parent().getDefenderAmount())
 	var a = 1.67
 	var b = 5
 	var c = -16.7
@@ -102,9 +102,6 @@ func _getPlayerTents():
 		playerTents.append(member)
 	
 	return playerTents
-
-func getSoldiers():
-	return get_parent().getSoldiers()
 	
 func getCurrentAttacker():
 	return currentAttacker
