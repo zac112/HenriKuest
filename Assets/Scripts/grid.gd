@@ -50,8 +50,21 @@ func _ready():
 	else:
 		generateGrid()
 	
+func has_village(x,y):
+	if x >= width or y >= height or x < 0 or y < 0:
+		return false
+	var tile = tiles[x][y]
+	var children = tile.get_children()
+	if len(children) < 2:
+		return false
+	return children[1].is_in_group("Tents")
+	
+func no_near_tents(x, y):
+	return !has_village(x-1, y) and !has_village(x-1,y-1) and !has_village(x-1,y+1) and !has_village(x,y-1)
+	
 func generateGrid():
 	var rng = RandomNumberGenerator.new()
+	# rng.randomize()
 	for x in range(width):
 		tiles.append([])
 		for y in range(height):
@@ -76,7 +89,7 @@ func generateGrid():
 			tile.get_node("Sprite").texture = texture
 			
 			
-			if rng.randi_range(0,100) < 5:
+			if rng.randi_range(0,100) < 5 and no_near_tents(x,y):
 				spawnTent(tile, rng.randi_range(0,len(tents)-1))
 			elif rng.randi_range(0,10) < 2:
 				tile.addContent(obstacles[rng.randi_range(0,len(obstacles)-1)].instance())
