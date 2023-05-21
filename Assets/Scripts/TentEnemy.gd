@@ -83,16 +83,17 @@ func _attack():
 	var enemyPlayer = enemy_player.instance()
 	enemyPlayer.setTeam(getTeam())
 	enemyPlayer.setHome(get_parent())
-	enemyPlayer.position = parentSquare.position
-	grid.add_child(enemyPlayer)
+	#enemyPlayer.position = parentSquare.position
 
-	var path = get_parent().get_parent().get_parent().findPath(enemyPlayer.global_position, closestTent.get_parent().global_position)
+	var path = get_parent().get_parent().get_parent().findPath(parentSquare.global_position, closestTent.get_parent().global_position)
 	
-	enemyPlayer.travelPath(path)
-	for soldier in takeDefendersFromTent():
+	var soldiers = takeDefendersFromTent()
+	for soldier in soldiers:
 		soldier.setTarget(enemyPlayer)
-		enemyPlayer.followers.append(soldier)
+	enemyPlayer.followers = soldiers
 		
+	grid.add_child(enemyPlayer)
+	enemyPlayer.travelPath(path)
 	
 	
 func _getPlayerTents():
@@ -118,8 +119,8 @@ func takeDefendersFromTent():
 func endBattle(winnerTeam, remainingTroops):
 	currentBattle = null
 	
-	get_parent().setOwnership(winnerTeam)
-	get_parent().addSoldiers(remainingTroops)
+	var newTent = get_parent().setOwnership(winnerTeam)
+	newTent.addSoldiers(remainingTroops)
 	
-	attackTimer.start()
-	get_parent().startSpawnTimer()
+#	attackTimer.start()
+#	get_parent().startSpawnTimer()

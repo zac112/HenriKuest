@@ -25,14 +25,9 @@ func next():
 
 
 func takeSoldiersFromPlayer():
-	var soldiers = []
-	
-	for follower in followers:
-		soldiers.append(follower)
-		
-	followers.clear()
-	
-	return soldiers
+	var result = followers
+	followers = []	
+	return result
 
 func getTeam():
 	return team

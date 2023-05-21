@@ -65,12 +65,12 @@ func changeProduction(selection):
 	
 # Change the ownership of the tent.
 func setOwnership(targetPlayerNumber):
-	if targetPlayerNumber == ownerPlayerNumber:return
+	if targetPlayerNumber == ownerPlayerNumber:return self
 		
 	grid.removeTent(ownerPlayerNumber)
 	ownerPlayerNumber = targetPlayerNumber
-	_destroy()
 	var newTent = grid.spawnTent(get_parent(), targetPlayerNumber)
+	_destroy()
 	return newTent
 	
 	
@@ -80,6 +80,7 @@ func _destroy():
 	queue_free()
 	
 func addSoldiers(tempSoldiers):
+	print(soldiers)
 	for soldier in tempSoldiers:
 		soldier.modulate = Color(1, 1, 1)
 		var follow_icon = soldier.get_node("FollowIcon")
@@ -87,6 +88,7 @@ func addSoldiers(tempSoldiers):
 			follow_icon.visible = false
 		soldier.setTarget(self.get_parent())
 	soldiers.append_array(tempSoldiers)
+	print(soldiers)
 
 
 func resetTimer():
@@ -110,13 +112,8 @@ func startSpawnTimer():
 
 # New battle system stuff below
 func takeDefendersFromTent():
-	var defenders = []
-	print(soldiers)
-	for soldier in soldiers:
-		defenders.append(soldier)
-	
-	soldiers.clear()
-	
+	var defenders = soldiers
+	soldiers = []	
 	return defenders
 	
 func getCurrentOwner():
