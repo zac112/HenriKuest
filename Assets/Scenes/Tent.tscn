@@ -15,7 +15,7 @@ radius = 34.0
 [sub_resource type="CircleShape2D" id=2]
 radius = 50.0899
 
-[node name="Node2D3" type="Node2D" groups=["PlayerTents"]]
+[node name="Node2D3" type="Node2D" groups=["PlayerTents", "Tents"]]
 script = ExtResource( 1 )
 
 [node name="Tents" type="Sprite" parent="."]

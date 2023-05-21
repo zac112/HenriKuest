@@ -45,7 +45,6 @@ func generateGrid():
 	var rng = RandomNumberGenerator.new()
 	for x in range(width):
 		tiles.append([])
-		print(x)
 		for y in range(height):
 			#print(str(x) + " " + str(y))
 			var pos = Vector2(x * tileSize - gridOffset, y * tileSize - gridOffset)
@@ -175,14 +174,20 @@ func findPath(start:Vector2, end:Vector2):
 	
 # Loading pre-made maps (grids?)
 func loadGrid(ID):
-	for x in range(2):
+	for x in range(width):
 		tiles.append([])
 		for y in range(height):
 			var currentTile = "Tile" + str((x * height) + y)
 			var tile = self.get_node(currentTile)
 			
 			var children = tile.get_children()
-			
+			if (len(children) > 1):
+				if (children[1].is_in_group("PlayerTents")):
+					playerTents += 1
+				
+				if (children[1].is_in_group("Tents")):
+					spawnedTentsCount += 1
+					
 			tiles[x].append(tile)
 	canWin = true
 	

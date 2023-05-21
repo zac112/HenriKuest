@@ -105,8 +105,9 @@ func _attack():
 	enemyPlayer.setHome(get_parent())
 	enemyPlayer.position = parentSquare.position
 	grid.add_child(enemyPlayer)
+
+	var path = get_parent().get_parent().get_parent().findPath(enemyPlayer.global_position, closestTent.get_parent().global_position)
 	
-	var path = get_node("/root/Main Node/GridManager").findPath(enemyPlayer.global_position, closestTent.get_parent().global_position)
 	enemyPlayer.travelPath(path)
 	for defender in defenders:
 		defender.setTarget(enemyPlayer)
