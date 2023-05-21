@@ -90,7 +90,7 @@ func resetTimer():
 	timer.start()
 	
 func isInCombat():
-	var attackers = get_node("Area2D").attackers
+	var attackers = get_node("Area2D2").attackers
 	return attackers != null and len(attackers)>0
 
 

@@ -103,7 +103,7 @@ func spawnTent(tile, number):
 		playerTents+=1
 	if number != 4:
 		spawnedTentsCount+=1
-		
+	print("Player: " + str(playerTents) + " Total: " + str(spawnedTentsCount))
 	if (playerTents >= spawnedTentsCount and canWin):
 		victory()
 
