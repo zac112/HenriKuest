@@ -1,6 +1,6 @@
 extends Button
 
-var sceneList = ["res://Assets/Scenes/MainMenu.tscn", "res://Assets/Scenes/LevelTutorial.tscn", "res://Assets/Scenes/TestLevel.tscn"]
+var sceneList = ["res://Assets/Scenes/MainMenu.tscn", "res://Assets/Scenes/LevelTutorial.tscn", "res://Assets/Scenes/Level1.tscn"]
 
 
 func _ready():
