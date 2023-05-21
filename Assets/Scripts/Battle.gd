@@ -13,6 +13,8 @@ var attackingPlayer
 func _ready():
 	tent = get_parent()
 	attackingPlayer = tent.getCurrentAttacker()
+	_getDefenders()
+	_getAttackers()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,7 +44,10 @@ func _getDefenders():
 	
 	
 func _getAttackers():
-	pass
+	var newAttackers = attackingPlayer.getAttackers()
+	
+	for attacker in newAttackers:
+		attackers.append(attacker)
 	
 	
 func _endBattle():
