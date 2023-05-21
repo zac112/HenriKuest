@@ -1,11 +1,13 @@
 extends Button
 
-var sceneList = ["res://Assets/Scenes/MainMenu.tscn", "res://Assets/Scenes/LevelTutorial.tscn", "res://Assets/Scenes/Level1.tscn", "res://Assets/Scenes/Level2.tscn", "res://Assets/Scenes/Level3.tscn", "res://Assets/Scenes/Main.tscn"]
+var sceneList = ["res://Assets/Scenes/Intro.tscn", "res://Assets/Scenes/LevelTutorial.tscn", "res://Assets/Scenes/Level1.tscn", "res://Assets/Scenes/Level2.tscn", "res://Assets/Scenes/Level3.tscn", "res://Assets/Scenes/Main.tscn"]
 
 
 func _ready():
 	var currentScene = get_parent().get_parent().get_parent().get_node("GridManager").gridID
-	if (currentScene < (len(sceneList) - 1)):
+	if (currentScene == 0):
+		self.text = "Play"
+	elif (currentScene < (len(sceneList) - 1)):
 		self.text = "Next Level"
 	else:
 		self.text = "Play again"

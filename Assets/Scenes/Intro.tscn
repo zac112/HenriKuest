@@ -37,7 +37,6 @@ font_data = ExtResource( 1 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
-visible = false
 script = ExtResource( 8 )
 
 [node name="Label2" type="Label" parent="Control"]
@@ -66,7 +65,7 @@ Press C when close to village in order to
 command units.
 Go near enemy villages to start fighting"
 
-[node name="Loss" type="Label" parent="Control"]
+[node name="Victory" type="Label" parent="Control"]
 margin_top = 29.0
 margin_right = 1017.0
 margin_bottom = 131.0
@@ -74,7 +73,7 @@ custom_fonts/font = SubResource( 9 )
 align = 1
 valign = 1
 
-[node name="Button" type="Button" parent="Control/Loss"]
+[node name="Button" type="Button" parent="Control/Victory"]
 anchor_bottom = 0.083
 margin_left = 372.0
 margin_top = 315.0
