@@ -83,9 +83,6 @@ func addSoldiers(tempSoldiers):
 		soldier.setTarget(self.get_parent())
 	soldiers.append_array(tempSoldiers)
 
-func getSoldiers():
-	return soldiers
-
 
 func resetTimer():
 	timer.stop()
@@ -95,3 +92,23 @@ func resetTimer():
 func isInCombat():
 	var attackers = get_node("Area2D").attackers
 	return attackers != null and len(attackers)>0
+
+
+# To be removed when new battle system works
+func getSoldiers():
+	return soldiers
+
+
+
+# New battle system stuff below
+func getDefenders():
+	var defenders = []
+	for soldier in soldiers:
+		defenders.append(soldier)
+	
+	return defenders
+	
+
+func removeDefenders(defendersToBeRemoved):
+	for defender in defendersToBeRemoved:
+		soldiers.erase(defender)

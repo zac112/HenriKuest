@@ -5,11 +5,14 @@ extends Node
 var defenders = []
 var attackers = []
 var battleTimer = Timer.new()
+var tent
+var attackingPlayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	tent = get_parent()
+	attackingPlayer = tent.getCurrentAttacker()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,7 +35,10 @@ func _killUnits():
 
 
 func _getDefenders():
-	pass
+	var newDefenders = tent.getDefenders()
+	
+	for defender in newDefenders:
+		defenders.append(defender)
 	
 	
 func _getAttackers():
