@@ -36,6 +36,10 @@ func _on_body_entered(body:Node):
 		#only one team can attack a tent at the same time
 	if (attacker_team != null and attacker_team != body.team):
 		return
+		
+	if !body.is_in_group("Player"):
+		if !body.isPathAlmostEmpty():
+			return
 	
 	if currentBattle == null:
 		attacker_team = body.team

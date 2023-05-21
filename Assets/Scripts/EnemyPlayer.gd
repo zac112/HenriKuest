@@ -24,6 +24,9 @@ func next():
 	else: timer.stop()
 
 
+func isPathAlmostEmpty():
+	return len(path) < 2
+
 func takeSoldiersFromPlayer():
 	var result = followers
 	followers = []
