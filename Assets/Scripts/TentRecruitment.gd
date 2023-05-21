@@ -45,7 +45,7 @@ func _recruitSoldiers():
 		soldier.setTarget(player)
 		player.addFollower(soldier)
 		soldier.modulate = Color(10, 1, 1)
-
+		soldier.get_node("FollowIcon").visible = true
 	var particle = particle_effect_scene.instance()
 	add_child(particle)
 	particle.global_position = self.global_position
