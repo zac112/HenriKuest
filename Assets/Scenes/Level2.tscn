@@ -450,6 +450,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
+[node name="Node2D4" parent="GridManager/Tile49" instance=ExtResource( 11 )]
+
 [node name="Tile50" type="Node2D" parent="GridManager"]
 position = Vector2( 192, 288 )
 script = ExtResource( 2 )
@@ -565,6 +567,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile63"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
+
+[node name="Node2D4" parent="GridManager/Tile63" instance=ExtResource( 11 )]
 
 [node name="Tile64" type="Node2D" parent="GridManager"]
 position = Vector2( 240, 240 )

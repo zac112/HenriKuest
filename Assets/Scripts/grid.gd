@@ -64,7 +64,7 @@ func no_near_tents(x, y):
 	
 func generateGrid():
 	var rng = RandomNumberGenerator.new()
-	# rng.randomize()
+	rng.randomize()
 	for x in range(width):
 		tiles.append([])
 		for y in range(height):
