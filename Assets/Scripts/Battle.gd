@@ -82,7 +82,8 @@ func _endBattle():
 	var winner = _checkWinner()
 	tent.endBattle(winner[0], winner[1])
 	
-	attackingPlayer.destroyIfNotHuman()
+	if attackingPlayer != null:
+		attackingPlayer.destroyIfNotHuman()
 	self.queue_free()
 
 
