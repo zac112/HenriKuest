@@ -40,6 +40,8 @@ func _checkInput():
 
 func _recruitSoldiers():
 	var soldiers = get_parent().takeDefendersFromTent()
+	
+	if (soldiers.size() == 0): return
 
 	for soldier in soldiers:
 		soldier.setTarget(player)
