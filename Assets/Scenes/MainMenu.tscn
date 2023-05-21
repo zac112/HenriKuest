@@ -66,20 +66,22 @@ text = "Play"
 script = ExtResource( 3 )
 
 [node name="Label2" type="Label" parent="Control"]
-margin_left = 216.0
-margin_top = 381.0
-margin_right = 822.0
-margin_bottom = 662.0
+margin_left = 207.0
+margin_top = 346.0
+margin_right = 813.0
+margin_bottom = 627.0
 custom_fonts/font = SubResource( 3 )
 text = "Credits:
 Art: Onni Hassila
-Coding: Erno Lokkila, Andrei Belogurov, Timo"
+Coding: Erno Lokkila, Andrei Belogurov, Timo
+Music: Samuli Mäkelä
+Playtesting: Samuli Mäkelä"
 
 [node name="Label3" type="Label" parent="Control"]
-margin_left = 220.0
-margin_top = 540.0
-margin_right = 834.0
-margin_bottom = 717.0
+margin_left = 217.0
+margin_top = 567.0
+margin_right = 831.0
+margin_bottom = 744.0
 custom_fonts/font = SubResource( 4 )
 text = "How to play:
 Press C when close to village in order to
