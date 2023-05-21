@@ -94,18 +94,7 @@ margin_top = 323.0
 margin_right = 823.0
 margin_bottom = 379.0
 custom_fonts/font = SubResource( 6 )
-text = "Play"
-
-[node name="Story2" type="Button" parent="Control"]
-visible = false
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = 221.0
-margin_top = 361.0
-margin_right = 830.0
-margin_bottom = 416.0
-custom_fonts/font = SubResource( 6 )
-text = "Back"
+text = "Story"
 
 [node name="StoryLabel" type="Label" parent="Control"]
 visible = false
@@ -123,6 +112,17 @@ real-time strategy and all the pieces with flamehtrower-wielding minions.
 
 Henrik a questing man grabbed his mighty staff of wololo, and went on a quest to reclaim the land. On a HenriKuest!"
 align = 1
+
+[node name="Story2" type="Button" parent="Control"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 221.0
+margin_top = 361.0
+margin_right = 830.0
+margin_bottom = 416.0
+custom_fonts/font = SubResource( 6 )
+text = "Back"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -196,6 +196,5 @@ texture = ExtResource( 3 )
 [node name="GridManager" parent="." instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="Control/Victory/Storybutton" to="Control" method="_on_Storybutton_pressed"]
-[connection signal="pressed" from="Control/Story2" to="Control" method="_on_Story_pressed"]
-[connection signal="pressed" from="Control/Story2" to="CanvasLayer" method="_on_Story_pressed"]
+[connection signal="pressed" from="Control/Story2" to="Control" method="_on_Story2_pressed"]
 [connection signal="visibility_changed" from="CanvasLayer/GameLogo" to="Control" method="_on_GameLogo_visibility_changed"]
