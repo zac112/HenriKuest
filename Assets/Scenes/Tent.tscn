@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Scripts/Tent.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Tents.png" type="Texture" id=2]
@@ -6,9 +6,13 @@
 [ext_resource path="res://Assets/Scripts/TentFillbar.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sprites/Square.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scripts/tentZIndex.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Scripts/EnemyTent.gd" type="Script" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 34.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 50.0899
 
 [node name="Node2D3" type="Node2D" groups=["PlayerTents"]]
 script = ExtResource( 1 )
@@ -40,3 +44,9 @@ offset = Vector2( 31.4286, 0 )
 color = Color( 0.494118, 0.909804, 0.113725, 1 )
 mode = 2
 script = ExtResource( 4 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 2 )

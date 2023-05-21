@@ -8,6 +8,7 @@ var start_coord_x = 40
 var start_coord_y = 40
 export var speed = 200
 var followers = []
+var team = 0
 
 func _ready():
 	$CollisionShape2D.disabled = false

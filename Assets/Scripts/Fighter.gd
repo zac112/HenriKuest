@@ -9,7 +9,6 @@ var angle = 0
 #Home tent position
 var target
 var max_dist = 50
-
 #Fighters won't move unless true
 
 var isMoving = false
