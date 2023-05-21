@@ -26,7 +26,7 @@ func next():
 
 func takeSoldiersFromPlayer():
 	var result = followers
-	followers = []	
+	followers = []
 	return result
 
 func getTeam():

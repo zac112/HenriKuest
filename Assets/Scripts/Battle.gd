@@ -7,6 +7,7 @@ var attackers = []
 var battleTimer = Timer.new()
 var tent
 var attackingPlayer
+var attackingPlayerTeam
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,7 @@ func _ready():
 func _startBattle():
 	tent = get_parent()
 	attackingPlayer = tent.getCurrentAttacker()
+	attackingPlayerTeam = attackingPlayer.getTeam()
 	_takeDefendersFromTent()
 	_takeSoldiersFromPlayer()
 	_setUpBattleTimer()
@@ -86,6 +88,6 @@ func _endBattle():
 
 func _checkWinner():	
 	if defenders.size() == 0:
-		return [attackingPlayer.getTeam(), attackers]
+		return [attackingPlayerTeam, attackers]
 	else:
 		return [tent.getTeam(), defenders]
