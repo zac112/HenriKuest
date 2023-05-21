@@ -80,7 +80,8 @@ func _destroy():
 func addSoldiers(tempSoldiers):
 	for soldier in tempSoldiers:
 		soldier.modulate = Color(1, 1, 1)
-	soldiers = tempSoldiers
+		soldier.setTarget(self.get_parent())
+	soldiers.append_array(tempSoldiers)
 
 func getSoldiers():
 	return soldiers
@@ -90,3 +91,7 @@ func resetTimer():
 	timer.stop()
 	timer.set_wait_time(getNextWaitTime())
 	timer.start()
+	
+func isInCombat():
+	var attackers = get_node("Area2D").attackers
+	return attackers != null and len(attackers)>0

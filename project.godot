@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Fighter",
 "language": "GDScript",
-"path": "res://Assets/Scenes/Fighter.gd"
+"path": "res://Assets/Scripts/Fighter.gd"
 }, {
 "base": "Node",
 "class": "Tile",

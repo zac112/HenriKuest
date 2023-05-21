@@ -75,20 +75,23 @@ func _attack():
 	if playerTents.size() == 0:
 		return
 	
-	var closestTent = playerTents[0]
-	
-	#for tent in playerTents:
-		#if tent.get_global_pos().distance_to(parentSquare) < closestTent.get_global_pos().distance_to(parentSquare):
-			#closestTent = tent
-	#Sending bishop to attack with soldiers
+	var closestTent = null
+	for tent in playerTents:
+		if tent.isInCombat(): continue
+		if closestTent == null: closestTent = tent
+		if tent.get_parent().position.distance_to(parentSquare.position) < closestTent.get_parent().position.distance_to(parentSquare.position):
+			closestTent = tent
+	#No available tents; skip attack
+	if closestTent == null: return
+
 	var enemyPlayer = enemy_player.instance()
 	enemyPlayer.setTeam(getTeam())
 	grid.add_child(enemyPlayer)
 	
 	enemyPlayer.position.x = parentSquare.position.x
 	enemyPlayer.position.y = parentSquare.position.y
-	enemyPlayer.setTarget(closestTent.get_parent())
-	
+	var path = get_node("/root/Main Node/GridManager").findPath(enemyPlayer.global_position, closestTent.get_parent().global_position)
+	enemyPlayer.travelPath(path)
 	for defender in defenders:
 		defender.setTarget(enemyPlayer)
 		enemyPlayer.followers.append(defender)
@@ -120,7 +123,6 @@ func _killTroops():
 		return
 		
 	if defenders.size() == 0:
-		print("Wtf " + str(getTeam())+ " " + str(attacker_team))
 		var tempAttackers = attackers.duplicate()
 		var newTent = get_parent().setOwnership(attacker_team)
 		newTent.addSoldiers(tempAttackers)

@@ -5,10 +5,9 @@ extends Node2D
 var noise = OpenSimplexNoise.new()
 var rng = RandomNumberGenerator.new()
 var angle = 0
+
 #Home tent position
-var home_tent = Vector2(50,50)
 var target
-var go_around_point = home_tent
 var max_dist = 50
 #Fighters won't move unless true
 
@@ -32,9 +31,7 @@ func _ready():
 	startMoving()
 
 func setTent(tent):
-	home_tent = tent
-	target = home_tent
-	go_around_point = home_tent	
+	setTarget(tent)	
 
 func setTarget(target):
 	self.target = target
@@ -43,6 +40,7 @@ func startMoving():
 	while true:
 		yield(get_tree().create_timer(0.8), "timeout")
 		changeDirection()
+		if !is_instance_valid(target):return
 		if (target.is_in_group("Player")):
 			isMoving = true
 		else:
@@ -57,7 +55,8 @@ func changeDirection():
 func move(delta):
 		# Define some speed
 	var speed = 100.0
-	go_around_point = target.position
+	if !is_instance_valid(target):return
+	var go_around_point = target.position
 	# Calculate direction:
 	# the Y coordinate must be inverted,
 	# because in 2D the Y axis is pointing down
