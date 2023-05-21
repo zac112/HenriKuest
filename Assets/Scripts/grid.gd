@@ -45,7 +45,7 @@ func _ready():
 	tents = [tent,tent2,tent3,tent4,tent_destroyed]
 	if gridID == 0:
 		pass
-	elif (gridID < 6):
+	elif (gridID < 5):
 		loadGrid(gridID)
 	else:
 		generateGrid()
