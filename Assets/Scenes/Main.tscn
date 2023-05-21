@@ -8,7 +8,7 @@
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
 width = 20
-height = 14
+height = 15
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
