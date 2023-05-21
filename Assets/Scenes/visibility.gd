@@ -24,9 +24,8 @@ func _on_GameLogo_visibility_changed():
 
 func _on_Story_pressed():
 	get_parent().get_node(".").visible = false
-	var path = get_parent().get_parent().get_node(".")
-	print(path)
-	#get_parent().get_node("CanvasLayer").visible = false
+	get_parent().get_node("CanvasLayer/GameLogo").visible = false
+	get_parent().get_node("Control/StoryLabel").visible = true
 	
 func _on_Story2_pressed():
 	get_node(".").visible = true

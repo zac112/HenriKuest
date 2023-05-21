@@ -106,10 +106,8 @@ margin_right = 830.0
 margin_bottom = 416.0
 custom_fonts/font = SubResource( 6 )
 text = "Back"
-script = ExtResource( 9 )
 
-[node name="Label" type="Label" parent="Control"]
-visible = false
+[node name="StoryLabel" type="Label" parent="Control"]
 margin_top = 131.0
 margin_right = 1173.0
 margin_bottom = 344.0
@@ -194,7 +192,6 @@ texture = ExtResource( 3 )
 [node name="GridManager" parent="." instance=ExtResource( 6 )]
 
 [connection signal="pressed" from="Control/Loss/Story" to="Control" method="_on_Story_pressed"]
-[connection signal="pressed" from="Control/Loss/Story" to="CanvasLayer" method="_on_Story_pressed"]
 [connection signal="pressed" from="Control/Story2" to="Control" method="_on_Story_pressed"]
 [connection signal="pressed" from="Control/Story2" to="CanvasLayer" method="_on_Story_pressed"]
 [connection signal="visibility_changed" from="CanvasLayer/GameLogo" to="Control" method="_on_GameLogo_visibility_changed"]
