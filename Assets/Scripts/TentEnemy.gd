@@ -120,6 +120,7 @@ func takeDefendersFromTent():
 
 func endBattle(winnerTeam, remainingTroops):
 	currentBattle = null
+	attacker_team = null
 	
 	var newTent = get_parent().setOwnership(winnerTeam)
 	newTent.addSoldiers(remainingTroops)
