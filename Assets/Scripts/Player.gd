@@ -58,7 +58,7 @@ func _on_Player_body_entered(body):
 	$CollisionShape2D.set_deferred("disabled", true)
 
 
-func _takeSoldiersFromPlayer():
+func takeSoldiersFromPlayer():
 	var soldiers = []
 	
 	for follower in followers:
@@ -67,3 +67,6 @@ func _takeSoldiersFromPlayer():
 	followers.clear()
 	
 	return soldiers
+
+func getTeam():
+	return team
