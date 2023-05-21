@@ -38,6 +38,8 @@ func _ready():
 	if gridID == 0:
 		self.visible = false
 	else:
+		get_parent().get_node("Control").get_node("Victory").visible = false
+		get_parent().get_node("Control").get_node("Loss").visible = false
 		get_parent().get_node("Control").visible = false
 	tents = [tent,tent2,tent3,tent4,tent_destroyed]
 	if gridID < 2:
@@ -88,8 +90,16 @@ func victory():
 	self.visible = false
 	get_parent().get_node("Player").visible = false
 	get_parent().get_node("Control").visible = true
+	get_parent().get_node("Control").get_node("Loss").visible = false
+	get_parent().get_node("Control").get_node("Victory").visible = true
 	# get_tree().change_scene("res://Assets/Scenes/winScreen.tscn")
 
+func loss():
+	self.visible = false
+	get_parent().get_node("Player").visible = false
+	get_parent().get_node("Control").visible = true
+	get_parent().get_node("Control").get_node("Victory").visible = false
+	get_parent().get_node("Control").get_node("Loss").visible = true
 
 	
 func spawnTent(tile, number):
@@ -98,7 +108,13 @@ func spawnTent(tile, number):
 	if number != 4:
 		spawnedTentsCount+=1
 	print("Player: " + str(playerTents) + " Total: " + str(spawnedTentsCount))
-	if (playerTents >= spawnedTentsCount and canWin):
+	if (playerTents == 0 and canWin):
+		print("loss")
+		canWin = false
+		loss()
+	elif (playerTents >= spawnedTentsCount and canWin):
+		print("victory")
+		canWin = false
 		victory()
 
 	var tent = tents[number].instance()
