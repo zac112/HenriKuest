@@ -10,7 +10,7 @@ func _ready():
 	elif (currentScene < (len(sceneList) - 1)):
 		self.text = "Next Level"
 	else:
-		self.text = "Play again"
+		self.text = "Play Randomized"
 	pass # Replace with function body.
 
 func _pressed():

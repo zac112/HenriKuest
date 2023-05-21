@@ -8,7 +8,7 @@ func _ready():
 	if (currentScene < (len(sceneList) - 1)):
 		self.text = "Restart level"
 	else:
-		self.text = "Play again"
+		self.text = "Play Randomized"
 	pass # Replace with function body.
 
 func _pressed():
