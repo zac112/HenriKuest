@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scripts/Tile.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Scenes/Obstacle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Scenes/Obstacle2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Scenes/Tent4.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Scenes/Pelimusiikki.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -42,7 +43,7 @@ size = 25
 outline_size = 2
 font_data = ExtResource( 10 )
 
-[node name="BASELEVEL" type="Node2D"]
+[node name="BASELEVEL2" type="Node2D"]
 
 [node name="GridManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
@@ -2486,8 +2487,6 @@ texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -28, 30 )
-player_start_x = 100
-player_start_y = 100
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 504, 385 )
@@ -2553,3 +2552,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "Lead your units to the
 enemy tent to attack it."
+
+[node name="Pelimusiikki" parent="." instance=ExtResource( 16 )]
+position = Vector2( 348, 247 )
