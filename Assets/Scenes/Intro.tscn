@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Fonts/BACKTO1982.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Mainmenu/Intro.gd" type="Script" id=2]
@@ -8,16 +8,15 @@
 [ext_resource path="res://Assets/Scenes/GridManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scenes/visibility.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Scenes/viewStory.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=7]
-size = 28
+size = 24
 outline_size = 2
 outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 28
+size = 24
 outline_size = 2
 outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
 font_data = ExtResource( 5 )
@@ -45,10 +44,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 8 )
 
 [node name="Label2" type="Label" parent="Control"]
-margin_left = 223.0
-margin_top = 437.0
-margin_right = 829.0
-margin_bottom = 718.0
+margin_left = 221.0
+margin_top = 583.0
+margin_right = 827.0
+margin_bottom = 864.0
 custom_fonts/font = SubResource( 7 )
 text = "Credits:
 Art: Onni Hassila
@@ -59,9 +58,9 @@ Bad time management: Taco"
 
 [node name="Label3" type="Label" parent="Control"]
 margin_left = 223.0
-margin_top = 590.0
+margin_top = 447.0
 margin_right = 837.0
-margin_bottom = 753.0
+margin_bottom = 610.0
 custom_fonts/font = SubResource( 8 )
 text = "How to play:
 Press C when close to village in order to
@@ -77,30 +76,31 @@ align = 1
 valign = 1
 
 [node name="Button" type="Button" parent="Control/Victory"]
-anchor_bottom = 0.083
+anchor_top = -0.284
+anchor_right = 1.0
+anchor_bottom = 7.245
 margin_left = 223.0
-margin_top = 323.0
-margin_right = 523.0
-margin_bottom = 379.0
+margin_top = 351.968
+margin_right = -497.0
+margin_bottom = -351.524
 custom_fonts/font = SubResource( 6 )
 text = "Play"
 script = ExtResource( 7 )
 
-[node name="Story" type="Button" parent="Control/Loss"]
+[node name="Storybutton" type="Button" parent="Control/Victory"]
 anchor_bottom = 0.083
-margin_left = 529.0
+margin_left = 526.0
 margin_top = 323.0
-margin_right = 829.0
+margin_right = 823.0
 margin_bottom = 379.0
 custom_fonts/font = SubResource( 6 )
 text = "Play"
-script = ExtResource( 9 )
 
 [node name="Story2" type="Button" parent="Control"]
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 224.0
+margin_left = 221.0
 margin_top = 361.0
 margin_right = 830.0
 margin_bottom = 416.0
@@ -108,6 +108,7 @@ custom_fonts/font = SubResource( 6 )
 text = "Back"
 
 [node name="StoryLabel" type="Label" parent="Control"]
+visible = false
 margin_top = 131.0
 margin_right = 1173.0
 margin_bottom = 344.0
@@ -128,6 +129,9 @@ layer = -1
 script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.001
+anchor_bottom = 1.0
+margin_right = -1.02405
 texture = ExtResource( 4 )
 
 [node name="Label1" type="Label" parent="CanvasLayer"]
@@ -191,7 +195,7 @@ texture = ExtResource( 3 )
 
 [node name="GridManager" parent="." instance=ExtResource( 6 )]
 
-[connection signal="pressed" from="Control/Loss/Story" to="Control" method="_on_Story_pressed"]
+[connection signal="pressed" from="Control/Victory/Storybutton" to="Control" method="_on_Storybutton_pressed"]
 [connection signal="pressed" from="Control/Story2" to="Control" method="_on_Story_pressed"]
 [connection signal="pressed" from="Control/Story2" to="CanvasLayer" method="_on_Story_pressed"]
 [connection signal="visibility_changed" from="CanvasLayer/GameLogo" to="Control" method="_on_GameLogo_visibility_changed"]
