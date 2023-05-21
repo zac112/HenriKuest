@@ -1,0 +1,2483 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scripts/Tile.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/Grid sprites/1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Grid sprites/2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Scripts/grid.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sprites/Grid sprites/3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Grid sprites/4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Scripts/RestartButton.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 10 )
+
+[node name="BASELEVEL" type="Node2D"]
+
+[node name="GridManager" type="Node2D" parent="."]
+script = ExtResource( 5 )
+width = 20
+height = 15
+gridID = 4
+
+[node name="Tile0" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile0"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile1" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile1"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile2" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile2"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile3" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile3"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile4" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile4"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile5" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile5"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile6" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile6"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile7" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile7"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile8" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile8"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile9" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile9"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile10" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile10"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile11" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile11"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile12" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile12"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile13" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile13"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile14" type="Node2D" parent="GridManager"]
+position = Vector2( 48, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile14"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile15" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile15"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile16" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile16"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile17" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile17"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile18" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile18"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile19" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile19"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile20" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile20"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile21" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile21"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile22" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile22"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile23" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile23"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile24" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile24"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile25" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile25"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile26" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile26"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile27" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile27"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile28" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile28"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile29" type="Node2D" parent="GridManager"]
+position = Vector2( 96, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile29"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile30" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile30"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile31" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile31"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile32" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile32"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile33" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile33"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile34" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile34"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile35" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile35"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile36" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile36"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile37" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile37"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile38" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile38"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile39" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile39"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile40" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile40"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile41" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile41"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile42" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile42"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile43" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile43"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile44" type="Node2D" parent="GridManager"]
+position = Vector2( 144, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile44"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile45" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile45"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile46" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile46"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile47" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile47"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile48" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile48"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile49" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile49"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile50" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile50"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile51" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile51"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile52" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile52"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile53" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile53"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile54" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile54"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile55" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile55"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile56" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile56"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile57" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile57"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile58" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile58"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile59" type="Node2D" parent="GridManager"]
+position = Vector2( 192, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile59"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile60" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile60"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile61" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile61"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile62" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile62"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile63" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile63"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile64" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile64"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile65" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile65"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile66" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile66"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile67" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile67"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile68" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile68"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile69" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile69"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile70" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile70"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile71" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile71"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile72" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile72"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile73" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile73"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile74" type="Node2D" parent="GridManager"]
+position = Vector2( 240, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile74"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile75" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile75"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile76" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile76"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile77" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile77"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile78" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile78"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile79" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile79"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile80" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile80"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile81" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile81"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile82" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile82"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile83" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile83"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile84" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile84"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile85" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile85"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile86" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile86"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile87" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile87"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile88" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile88"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile89" type="Node2D" parent="GridManager"]
+position = Vector2( 288, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile89"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile90" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile90"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile91" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile91"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile92" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile92"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile93" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile93"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile94" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile94"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile95" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile95"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile96" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile96"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile97" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile97"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile98" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile98"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile99" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile99"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile100" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile100"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile101" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile101"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile102" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile102"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile103" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile103"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile104" type="Node2D" parent="GridManager"]
+position = Vector2( 336, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile104"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile105" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile105"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile106" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile106"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile107" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile107"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile108" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile108"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile109" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile109"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile110" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile110"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile111" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile111"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile112" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile112"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile113" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile113"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile114" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile114"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile115" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile115"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile116" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile116"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile117" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile117"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile118" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile118"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile119" type="Node2D" parent="GridManager"]
+position = Vector2( 384, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile119"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile120" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile120"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile121" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile121"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile122" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile122"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile123" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile123"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile124" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile124"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile125" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile125"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile126" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile126"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile127" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile127"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile128" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile128"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile129" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile129"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile130" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile130"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile131" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile131"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile132" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile132"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile133" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile133"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile134" type="Node2D" parent="GridManager"]
+position = Vector2( 432, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile134"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile135" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile135"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile136" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile136"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile137" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile137"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile138" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile138"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile139" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile139"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile140" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile140"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile141" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile141"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile142" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile142"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile143" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile143"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile144" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile144"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile145" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile145"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile146" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile146"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile147" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile147"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile148" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile148"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile149" type="Node2D" parent="GridManager"]
+position = Vector2( 480, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile149"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile150" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile150"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile151" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile151"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile152" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile152"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile153" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile153"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile154" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile154"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile155" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile155"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile156" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile156"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile157" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile157"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile158" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile158"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile159" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile159"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile160" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile160"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile161" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile161"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile162" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile162"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile163" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile163"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile164" type="Node2D" parent="GridManager"]
+position = Vector2( 528, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile164"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile165" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile165"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile166" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile166"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile167" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile167"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile168" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile168"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile169" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile169"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile170" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile170"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile171" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile171"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile172" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile172"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile173" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile173"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile174" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile174"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile175" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile175"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile176" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile176"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile177" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile177"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile178" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile178"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile179" type="Node2D" parent="GridManager"]
+position = Vector2( 576, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile179"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile180" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile180"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile181" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile181"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile182" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile182"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile183" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile183"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile184" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile184"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile185" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile185"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile186" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile186"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile187" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile187"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile188" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile188"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile189" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile189"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile190" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile190"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile191" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile191"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile192" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile192"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile193" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile193"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile194" type="Node2D" parent="GridManager"]
+position = Vector2( 624, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile194"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile195" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile195"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile196" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile196"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile197" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile197"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile198" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile198"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile199" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile199"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile200" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile200"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile201" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile201"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile202" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile202"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile203" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile203"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile204" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile204"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile205" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile205"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile206" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile206"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile207" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile207"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile208" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile208"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile209" type="Node2D" parent="GridManager"]
+position = Vector2( 672, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile209"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile210" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile210"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile211" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile211"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile212" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile212"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile213" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile213"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile214" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile214"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile215" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile215"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile216" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile216"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile217" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile217"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile218" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile218"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile219" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile219"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile220" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile220"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile221" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile221"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile222" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile222"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile223" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile223"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile224" type="Node2D" parent="GridManager"]
+position = Vector2( 720, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile224"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile225" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile225"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile226" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile226"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile227" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile227"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile228" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile228"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile229" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile229"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile230" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile230"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile231" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile231"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile232" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile232"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile233" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile233"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile234" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile234"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile235" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile235"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile236" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile236"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile237" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile237"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile238" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile238"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile239" type="Node2D" parent="GridManager"]
+position = Vector2( 768, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile239"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile240" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile240"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile241" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile241"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile242" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile242"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile243" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile243"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile244" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile244"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile245" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile245"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile246" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile246"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile247" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile247"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile248" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile248"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile249" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile249"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile250" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile250"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile251" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile251"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile252" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile252"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile253" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile253"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile254" type="Node2D" parent="GridManager"]
+position = Vector2( 816, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile254"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile255" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile255"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile256" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile256"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile257" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile257"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile258" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile258"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile259" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile259"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile260" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile260"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile261" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile261"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile262" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile262"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile263" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile263"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile264" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile264"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile265" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile265"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile266" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile266"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile267" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile267"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile268" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile268"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile269" type="Node2D" parent="GridManager"]
+position = Vector2( 864, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile269"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile270" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile270"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile271" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile271"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile272" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile272"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile273" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile273"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile274" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile274"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile275" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile275"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile276" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile276"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile277" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile277"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile278" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile278"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile279" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile279"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile280" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile280"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile281" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile281"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile282" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile282"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile283" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile283"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Tile284" type="Node2D" parent="GridManager"]
+position = Vector2( 912, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile284"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Tile285" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 48 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile285"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile286" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 96 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile286"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile287" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 144 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile287"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile288" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 192 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile288"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile289" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 240 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile289"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile290" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 288 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile290"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile291" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 336 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile291"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile292" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 384 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile292"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile293" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 432 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile293"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile294" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 480 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile294"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile295" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 528 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile295"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile296" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 576 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile296"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile297" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 624 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile297"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Tile298" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 672 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile298"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Tile299" type="Node2D" parent="GridManager"]
+position = Vector2( 960, 720 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="GridManager/Tile299"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -28, 30 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 504, 385 )
+current = true
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Loss" type="Label" parent="Control"]
+margin_top = 29.0
+margin_right = 1017.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 1 )
+text = "You lost!"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Control/Loss"]
+margin_left = 348.0
+margin_top = 218.0
+margin_right = 684.0
+margin_bottom = 308.0
+custom_fonts/font = SubResource( 2 )
+text = "Next Level"
+script = ExtResource( 8 )
+
+[node name="Victory" type="Label" parent="Control"]
+margin_top = 29.0
+margin_right = 1017.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 3 )
+text = "Victory!"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Control/Victory"]
+margin_left = 348.0
+margin_top = 218.0
+margin_right = 684.0
+margin_bottom = 308.0
+custom_fonts/font = SubResource( 4 )
+text = "Next Level"
+script = ExtResource( 9 )
