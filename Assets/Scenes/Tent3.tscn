@@ -10,7 +10,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 27.7218
 
-[node name="Node2D3" type="Node2D"]
+[node name="Node2D3" type="Node2D" groups=["Tents"]]
 script = ExtResource( 1 )
 ownerPlayerNumber = 2
 

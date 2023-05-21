@@ -41,26 +41,10 @@ func _ready():
 	else:
 		loadGrid(gridID)
 	
-	
-	var timer = Timer.new()
-	add_child(timer)
-	timer.connect("timeout",self,"startAI")
-	timer.set_one_shot(true)
-	timer.start()
-	
-func startAI():
-	var path = findPath(Vector2(0,0), Vector2(528,528))
-	var AI = load("res://Assets/Scenes/PlayerAI.tscn").instance()
-	add_child(AI)
-	AI.global_position = Vector2(50,50)
-	AI.travelPath(path)
-	
-
 func generateGrid():
 	var rng = RandomNumberGenerator.new()
 	for x in range(width):
 		tiles.append([])
-		print(x)
 		for y in range(height):
 			#print(str(x) + " " + str(y))
 			var pos = Vector2(x * tileSize - gridOffset, y * tileSize - gridOffset)
@@ -103,7 +87,7 @@ func spawnTent(tile, number):
 		playerTents+=1
 	if number != 4:
 		spawnedTentsCount+=1
-		
+	print("Player: " + str(playerTents) + " Total: " + str(spawnedTentsCount))
 	if (playerTents >= spawnedTentsCount and canWin):
 		victory()
 
@@ -190,14 +174,20 @@ func findPath(start:Vector2, end:Vector2):
 	
 # Loading pre-made maps (grids?)
 func loadGrid(ID):
-	for x in range(2):
+	for x in range(width):
 		tiles.append([])
 		for y in range(height):
 			var currentTile = "Tile" + str((x * height) + y)
 			var tile = self.get_node(currentTile)
 			
 			var children = tile.get_children()
-			
+			if (len(children) > 1):
+				if (children[1].is_in_group("PlayerTents")):
+					playerTents += 1
+				
+				if (children[1].is_in_group("Tents")):
+					spawnedTentsCount += 1
+					
 			tiles[x].append(tile)
 	canWin = true
 	

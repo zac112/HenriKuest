@@ -92,8 +92,8 @@ func resetTimer():
 	timer.start()
 	
 func isInCombat():
-	var attackers = get_node("Area2D").attackers
-	return attackers != null and len(attackers)>0
+	return get_node("Area2D2").currentBattle != null
+	
 
 
 # To be removed when new battle system works
