@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scripts/Tile.gd" type="Script" id=2]
@@ -10,11 +10,13 @@
 [ext_resource path="res://Assets/Scripts/RestartButton.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Assets/Scenes/Obstacle3.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Scenes/Tent.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Scenes/Obstacle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Scenes/Tent.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Scenes/Obstacle.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Scenes/Obstacle3.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Scenes/Obstacle2.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Scenes/Tent4.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Scenes/Tent2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Scenes/Tent3.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Scenes/Tent4.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -38,7 +40,7 @@ font_data = ExtResource( 10 )
 script = ExtResource( 5 )
 width = 20
 height = 15
-gridID = 1
+gridID = 2
 
 [node name="Tile0" type="Node2D" parent="GridManager"]
 position = Vector2( 48, 48 )
@@ -103,8 +105,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile7"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
-
-[node name="Obstacle" parent="GridManager/Tile7" instance=ExtResource( 11 )]
 
 [node name="Tile8" type="Node2D" parent="GridManager"]
 position = Vector2( 48, 432 )
@@ -234,8 +234,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
-[node name="Obstacle" parent="GridManager/Tile23" instance=ExtResource( 11 )]
-
 [node name="Tile24" type="Node2D" parent="GridManager"]
 position = Vector2( 96, 480 )
 script = ExtResource( 2 )
@@ -364,7 +362,7 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 
-[node name="Obstacle" parent="GridManager/Tile39" instance=ExtResource( 11 )]
+[node name="Obstacle" parent="GridManager/Tile39" instance=ExtResource( 13 )]
 
 [node name="Tile40" type="Node2D" parent="GridManager"]
 position = Vector2( 144, 528 )
@@ -414,8 +412,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
-[node name="Obstacle" parent="GridManager/Tile45" instance=ExtResource( 11 )]
-
 [node name="Tile46" type="Node2D" parent="GridManager"]
 position = Vector2( 192, 96 )
 script = ExtResource( 2 )
@@ -431,6 +427,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile47"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
+
+[node name="Node2D3" parent="GridManager/Tile47" instance=ExtResource( 11 )]
 
 [node name="Tile48" type="Node2D" parent="GridManager"]
 position = Vector2( 192, 192 )
@@ -496,6 +494,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
+[node name="Obstacle" parent="GridManager/Tile55" instance=ExtResource( 13 )]
+
 [node name="Tile56" type="Node2D" parent="GridManager"]
 position = Vector2( 192, 576 )
 script = ExtResource( 2 )
@@ -543,8 +543,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile61"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
-
-[node name="Obstacle" parent="GridManager/Tile61" instance=ExtResource( 11 )]
 
 [node name="Tile62" type="Node2D" parent="GridManager"]
 position = Vector2( 240, 144 )
@@ -634,8 +632,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
-[node name="Obstacle" parent="GridManager/Tile72" instance=ExtResource( 13 )]
-
 [node name="Tile73" type="Node2D" parent="GridManager"]
 position = Vector2( 240, 672 )
 script = ExtResource( 2 )
@@ -668,8 +664,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
-[node name="Obstacle" parent="GridManager/Tile76" instance=ExtResource( 11 )]
-
 [node name="Tile77" type="Node2D" parent="GridManager"]
 position = Vector2( 288, 144 )
 script = ExtResource( 2 )
@@ -694,6 +688,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
+[node name="Obstacle" parent="GridManager/Tile79" instance=ExtResource( 12 )]
+
 [node name="Tile80" type="Node2D" parent="GridManager"]
 position = Vector2( 288, 288 )
 script = ExtResource( 2 )
@@ -709,8 +705,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile81"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
-
-[node name="Node2D3" parent="GridManager/Tile81" instance=ExtResource( 12 )]
 
 [node name="Tile82" type="Node2D" parent="GridManager"]
 position = Vector2( 288, 384 )
@@ -751,8 +745,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile86"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
-
-[node name="Obstacle" parent="GridManager/Tile86" instance=ExtResource( 14 )]
 
 [node name="Tile87" type="Node2D" parent="GridManager"]
 position = Vector2( 288, 624 )
@@ -826,6 +818,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 
+[node name="Obstacle2" parent="GridManager/Tile95" instance=ExtResource( 14 )]
+
 [node name="Tile96" type="Node2D" parent="GridManager"]
 position = Vector2( 336, 336 )
 script = ExtResource( 2 )
@@ -850,6 +844,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
+[node name="Obstacle2" parent="GridManager/Tile98" instance=ExtResource( 14 )]
+
 [node name="Tile99" type="Node2D" parent="GridManager"]
 position = Vector2( 336, 480 )
 script = ExtResource( 2 )
@@ -873,6 +869,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile101"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
+
+[node name="Node2D2" parent="GridManager/Tile101" instance=ExtResource( 15 )]
 
 [node name="Tile102" type="Node2D" parent="GridManager"]
 position = Vector2( 336, 624 )
@@ -954,6 +952,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
+[node name="Obstacle2" parent="GridManager/Tile111" instance=ExtResource( 14 )]
+
 [node name="Tile112" type="Node2D" parent="GridManager"]
 position = Vector2( 384, 384 )
 script = ExtResource( 2 )
@@ -962,6 +962,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
+[node name="Obstacle" parent="GridManager/Tile112" instance=ExtResource( 12 )]
+
 [node name="Tile113" type="Node2D" parent="GridManager"]
 position = Vector2( 384, 432 )
 script = ExtResource( 2 )
@@ -969,8 +971,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile113"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
-
-[node name="Node2D3" parent="GridManager/Tile113" instance=ExtResource( 12 )]
 
 [node name="Tile114" type="Node2D" parent="GridManager"]
 position = Vector2( 384, 480 )
@@ -1188,8 +1188,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
-[node name="Obstacle" parent="GridManager/Tile140" instance=ExtResource( 14 )]
-
 [node name="Tile141" type="Node2D" parent="GridManager"]
 position = Vector2( 480, 336 )
 script = ExtResource( 2 )
@@ -1198,8 +1196,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
-[node name="Obstacle" parent="GridManager/Tile141" instance=ExtResource( 13 )]
-
 [node name="Tile142" type="Node2D" parent="GridManager"]
 position = Vector2( 480, 384 )
 script = ExtResource( 2 )
@@ -1207,8 +1203,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile142"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
-
-[node name="Obstacle" parent="GridManager/Tile142" instance=ExtResource( 14 )]
 
 [node name="Tile143" type="Node2D" parent="GridManager"]
 position = Vector2( 480, 432 )
@@ -1434,6 +1428,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
+[node name="Obstacle" parent="GridManager/Tile170" instance=ExtResource( 13 )]
+
 [node name="Tile171" type="Node2D" parent="GridManager"]
 position = Vector2( 576, 336 )
 script = ExtResource( 2 )
@@ -1470,6 +1466,8 @@ texture = ExtResource( 7 )
 position = Vector2( 576, 528 )
 script = ExtResource( 2 )
 
+[node name="Obstacle2" parent="GridManager/Tile175" instance=ExtResource( 14 )]
+
 [node name="Sprite" type="Sprite" parent="GridManager/Tile175"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
@@ -1489,6 +1487,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile177"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
+
+[node name="Obstacle" parent="GridManager/Tile177" instance=ExtResource( 12 )]
 
 [node name="Tile178" type="Node2D" parent="GridManager"]
 position = Vector2( 576, 672 )
@@ -1522,8 +1522,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 
-[node name="Obstacle" parent="GridManager/Tile181" instance=ExtResource( 14 )]
-
 [node name="Tile182" type="Node2D" parent="GridManager"]
 position = Vector2( 624, 144 )
 script = ExtResource( 2 )
@@ -1540,6 +1538,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 
+[node name="Obstacle" parent="GridManager/Tile183" instance=ExtResource( 13 )]
+
 [node name="Tile184" type="Node2D" parent="GridManager"]
 position = Vector2( 624, 240 )
 script = ExtResource( 2 )
@@ -1547,6 +1547,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile184"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
+
+[node name="Obstacle" parent="GridManager/Tile184" instance=ExtResource( 13 )]
 
 [node name="Tile185" type="Node2D" parent="GridManager"]
 position = Vector2( 624, 288 )
@@ -1596,6 +1598,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
+[node name="Obstacle" parent="GridManager/Tile190" instance=ExtResource( 12 )]
+
 [node name="Tile191" type="Node2D" parent="GridManager"]
 position = Vector2( 624, 576 )
 script = ExtResource( 2 )
@@ -1603,6 +1607,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile191"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
+
+[node name="Obstacle2" parent="GridManager/Tile191" instance=ExtResource( 14 )]
 
 [node name="Tile192" type="Node2D" parent="GridManager"]
 position = Vector2( 624, 624 )
@@ -1724,8 +1730,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
-[node name="Obstacle" parent="GridManager/Tile206" instance=ExtResource( 13 )]
-
 [node name="Tile207" type="Node2D" parent="GridManager"]
 position = Vector2( 672, 624 )
 script = ExtResource( 2 )
@@ -1766,6 +1770,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 
+[node name="Node2D3" parent="GridManager/Tile211" instance=ExtResource( 16 )]
+
 [node name="Tile212" type="Node2D" parent="GridManager"]
 position = Vector2( 720, 144 )
 script = ExtResource( 2 )
@@ -1805,8 +1811,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile216"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
-
-[node name="Node2D3" parent="GridManager/Tile216" instance=ExtResource( 15 )]
 
 [node name="Tile217" type="Node2D" parent="GridManager"]
 position = Vector2( 720, 384 )
@@ -1960,6 +1964,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
+[node name="Node2D3" parent="GridManager/Tile235" instance=ExtResource( 17 )]
+
 [node name="Tile236" type="Node2D" parent="GridManager"]
 position = Vector2( 768, 576 )
 script = ExtResource( 2 )
@@ -2023,8 +2029,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile243"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
-
-[node name="Obstacle" parent="GridManager/Tile243" instance=ExtResource( 13 )]
 
 [node name="Tile244" type="Node2D" parent="GridManager"]
 position = Vector2( 816, 240 )
@@ -2146,6 +2150,8 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 
+[node name="Obstacle2" parent="GridManager/Tile258" instance=ExtResource( 14 )]
+
 [node name="Tile259" type="Node2D" parent="GridManager"]
 position = Vector2( 864, 240 )
 script = ExtResource( 2 )
@@ -2193,6 +2199,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile264"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
+
+[node name="Node2D3" parent="GridManager/Tile264" instance=ExtResource( 17 )]
 
 [node name="Tile265" type="Node2D" parent="GridManager"]
 position = Vector2( 864, 528 )
@@ -2273,6 +2281,8 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile274"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
+
+[node name="Obstacle" parent="GridManager/Tile274" instance=ExtResource( 12 )]
 
 [node name="Tile275" type="Node2D" parent="GridManager"]
 position = Vector2( 912, 288 )
@@ -2520,20 +2530,3 @@ margin_bottom = 308.0
 custom_fonts/font = SubResource( 4 )
 text = "Next Level"
 script = ExtResource( 9 )
-
-[node name="TutorialText" type="Label" parent="Control"]
-margin_left = 181.0
-margin_top = 246.0
-margin_right = 401.0
-margin_bottom = 301.0
-text = "You lead the blue team
-Press C near your tent
-to gather and command your units"
-
-[node name="TutorialText2" type="Label" parent="Control"]
-margin_left = 644.0
-margin_top = 270.0
-margin_right = 864.0
-margin_bottom = 325.0
-text = "Lead your units to an
-enemy tent to attack it."
