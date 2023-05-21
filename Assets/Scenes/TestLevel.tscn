@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scripts/Tile.gd" type="Script" id=2]
@@ -8,9 +8,19 @@
 [ext_resource path="res://Assets/Sprites/Grid sprites/3.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/Grid sprites/4.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Scenes/Obstacle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Scenes/Tent4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Scenes/winScreen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Scenes/Tent.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Scenes/Tent3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 13 )
 
 [node name="TestLevel" type="Node2D"]
 
@@ -590,8 +600,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
 
-[node name="Node2D3" parent="GridManager/Tile70" instance=ExtResource( 11 )]
-
 [node name="Tile71" type="Node2D" parent="GridManager"]
 position = Vector2( 240, 576 )
 script = ExtResource( 2 )
@@ -631,8 +639,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile75"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
-
-[node name="Node2D3" parent="GridManager/Tile75" instance=ExtResource( 10 )]
 
 [node name="Tile76" type="Node2D" parent="GridManager"]
 position = Vector2( 288, 96 )
@@ -827,8 +833,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile99"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
-
-[node name="Node2D3" parent="GridManager/Tile99" instance=ExtResource( 11 )]
 
 [node name="Tile100" type="Node2D" parent="GridManager"]
 position = Vector2( 336, 528 )
@@ -1271,8 +1275,6 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile154"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
-
-[node name="Node2D3" parent="GridManager/Tile154" instance=ExtResource( 9 )]
 
 [node name="Tile155" type="Node2D" parent="GridManager"]
 position = Vector2( 528, 288 )
@@ -2422,8 +2424,6 @@ script = ExtResource( 2 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
-[node name="Node2D3" parent="GridManager/Tile297" instance=ExtResource( 9 )]
-
 [node name="Tile298" type="Node2D" parent="GridManager"]
 position = Vector2( 960, 672 )
 script = ExtResource( 2 )
@@ -2446,3 +2446,23 @@ position = Vector2( -29, 30 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 504, 383 )
 current = true
+
+[node name="Control" parent="." instance=ExtResource( 9 )]
+
+[node name="Label2" type="Label" parent="Control"]
+margin_top = 29.0
+margin_right = 1017.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 1 )
+text = "Victory!"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Control/Label2"]
+margin_left = 348.0
+margin_top = 218.0
+margin_right = 684.0
+margin_bottom = 308.0
+custom_fonts/font = SubResource( 2 )
+text = "Next Level"
+script = ExtResource( 12 )

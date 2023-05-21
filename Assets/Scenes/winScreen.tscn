@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Scenes/PlayButton.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -30,5 +30,5 @@ margin_top = 218.0
 margin_right = 684.0
 margin_bottom = 308.0
 custom_fonts/font = SubResource( 2 )
-text = "Play again"
+text = "Next Level"
 script = ExtResource( 2 )
