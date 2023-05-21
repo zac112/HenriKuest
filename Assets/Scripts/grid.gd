@@ -22,6 +22,9 @@ preload("res://Assets/Scenes/Obstacle2.tscn")]
 #makes variables editable from godot editor
 export var width = 60
 export var height = 40
+
+export var gridID = 0 # 0 is for "random" generation while other grids need to have IDs
+
 export var tileSize = 48
 
 var gridOffset = -48
@@ -32,8 +35,11 @@ var canWin = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tents = [tent,tent2,tent3,tent4]
-	generateGrid()
+	tents = [tent,tent2,tent3,tent4,tent_destroyed]
+	if gridID == 0:
+		generateGrid()
+	else:
+		loadGrid(gridID)
 	
 	
 	var timer = Timer.new()
@@ -54,6 +60,7 @@ func generateGrid():
 	var rng = RandomNumberGenerator.new()
 	for x in range(width):
 		tiles.append([])
+		print(x)
 		for y in range(height):
 			#print(str(x) + " " + str(y))
 			var pos = Vector2(x * tileSize - gridOffset, y * tileSize - gridOffset)
@@ -88,6 +95,8 @@ func generateGrid():
 		
 func victory():
 	get_tree().change_scene("res://Assets/Scenes/winScreen.tscn")
+
+
 	
 func spawnTent(tile, number):
 	if number == 0:
@@ -174,4 +183,24 @@ func findPath(start:Vector2, end:Vector2):
 	print("Did not find path")
 	return []
 	
+
 	
+	
+	
+	
+# Loading pre-made maps (grids?)
+func loadGrid(ID):
+	for x in range(2):
+		tiles.append([])
+		for y in range(height):
+			var currentTile = "Tile" + str((x * height) + y)
+			var tile = self.get_node(currentTile)
+			
+			var children = tile.get_children()
+			
+			tiles[x].append(tile)
+	canWin = true
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
