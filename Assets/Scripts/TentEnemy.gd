@@ -29,8 +29,8 @@ func _on_body_entered(body:Node):
 	
 	#own village
 	if (body.team == getTeam()):
-		if (body.team != 0):
-			get_parent().addSoldiers(body.getFollowers())
+		if (body.team != 0):			
+			get_parent().addSoldiers(body.takeSoldiersFromPlayer())
 		return
 	
 		#only one team can attack a tent at the same time
@@ -57,7 +57,7 @@ func getTeam():
 	return get_parent().ownerPlayerNumber
 
 func _tryAttack():
-	var x = len(get_parent().getDefenderAmount())
+	var x = get_parent().getDefenderAmount()
 	var a = 1.67
 	var b = 5
 	var c = -16.7

@@ -50,10 +50,6 @@ func _process(delta):
 		$AnimatedSprite.flip_h = false
 	
 
-func getFollowers():
-	return followers
-
-
 func addFollower(follower):
 	followers.append(follower)
 

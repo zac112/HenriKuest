@@ -12,9 +12,6 @@ func setHome(home):
 func setTeam(num):
 	self.team = num
 	
-func getFollowers():
-	return followers
-	
 func travelPath(path:Array):
 	add_child(timer)
 	timer.connect("timeout",self,"next")
