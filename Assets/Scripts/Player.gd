@@ -53,6 +53,10 @@ func _process(delta):
 func getFollowers():
 	return followers
 
+
+func addFollower(follower):
+	followers.append(follower)
+
 func _on_Player_body_entered(body):
 	emit_signal("hit")
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -70,3 +74,7 @@ func takeSoldiersFromPlayer():
 
 func getTeam():
 	return team
+
+func destroyIfNotHuman():
+	pass
+

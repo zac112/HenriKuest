@@ -55,11 +55,7 @@ func _killUnits():
 
 
 func _takeDefendersFromTent():
-	var newDefenders = tent.takeDefendersFromTent()
-	
-	for defender in newDefenders:
-		defenders.append(defender)
-		
+	defenders = tent.takeDefendersFromTent()
 	
 	
 func _takeSoldiersFromPlayer():
@@ -84,6 +80,7 @@ func _endBattle():
 	var winner = _checkWinner()
 	tent.endBattle(winner[0], winner[1])
 	
+	attackingPlayer.destroyIfNotHuman()
 	self.queue_free()
 
 

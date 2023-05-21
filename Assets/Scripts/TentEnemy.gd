@@ -6,7 +6,6 @@ var currentBattle
 var rng = RandomNumberGenerator.new()
 var attacker_team = null
 var currentAttacker = null
-var soldiers = []
 var parentSquare
 var attackTimer = Timer.new()
 export var minDefendersToAttack = 1
@@ -19,10 +18,8 @@ func _ready():
 	attackTimer.wait_time = 1
 	attackTimer.connect("timeout", self, "_tryAttack")
 	attackTimer.start()
-
 	
 	connect("body_entered", self, "_on_body_entered")
-	soldiers = get_parent().getSoldiers()
 	grid = get_tree().current_scene.get_node("GridManager")
 	rng.randomize()
 	
@@ -34,7 +31,6 @@ func _on_body_entered(body:Node):
 	if (body.team == getTeam()):
 		if (body.team != 0):
 			get_parent().addSoldiers(body.getFollowers())
-			body.queue_free()
 		return
 	
 		#only one team can attack a tent at the same time
@@ -51,8 +47,6 @@ func _on_body_entered(body:Node):
 	
 	
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if getTeam() != 0 and currentBattle == null:
@@ -63,7 +57,7 @@ func getTeam():
 	return get_parent().ownerPlayerNumber
 
 func _tryAttack():
-	var x = len(soldiers)
+	var x = len(getSoldiers())
 	var a = 1.67
 	var b = 5
 	var c = -16.7
@@ -95,12 +89,10 @@ func _attack():
 	var path = get_parent().get_parent().get_parent().findPath(enemyPlayer.global_position, closestTent.get_parent().global_position)
 	
 	enemyPlayer.travelPath(path)
-	for soldier in soldiers:
+	for soldier in takeDefendersFromTent():
 		soldier.setTarget(enemyPlayer)
 		enemyPlayer.followers.append(soldier)
 		
-
-	soldiers.clear()
 	
 	
 func _getPlayerTents():
@@ -111,7 +103,9 @@ func _getPlayerTents():
 	
 	return playerTents
 
-
+func getSoldiers():
+	return get_parent().getSoldiers()
+	
 func getCurrentAttacker():
 	return currentAttacker
 
@@ -121,13 +115,7 @@ func getTargetableNode():
 	
 
 func takeDefendersFromTent():
-	var defenders = []
-	for soldier in soldiers:
-		defenders.append(soldier)
-	
-	soldiers.clear()
-	
-	return defenders
+	return get_parent().takeDefendersFromTent()
 
 
 func endBattle(winnerTeam, remainingTroops):

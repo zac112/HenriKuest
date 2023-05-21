@@ -39,14 +39,14 @@ func _checkInput():
 
 
 func _recruitSoldiers():
-	var soldiers = get_parent().getSoldiers()
-	
+	var soldiers = get_parent().takeDefendersFromTent()
+
 	for soldier in soldiers:
 		soldier.setTarget(player)
-		player.getFollowers().append(soldier)
+		player.addFollower(soldier)
 		soldier.modulate = Color(10, 1, 1)
+
 	var particle = particle_effect_scene.instance()
 	add_child(particle)
 	particle.global_position = self.global_position
-	soldiers.clear()
 	get_parent().resetTimer()

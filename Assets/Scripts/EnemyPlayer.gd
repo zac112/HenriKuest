@@ -39,3 +39,6 @@ func takeSoldiersFromPlayer():
 
 func getTeam():
 	return team
+
+func destroyIfNotHuman():
+	queue_free()

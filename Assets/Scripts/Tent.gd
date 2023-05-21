@@ -98,7 +98,7 @@ func isInCombat():
 
 # To be removed when new battle system works
 func getSoldiers():
-	return soldiers
+	return soldiers.duplicate()
 
 
 func stopSpawnTimer():
@@ -112,6 +112,7 @@ func startSpawnTimer():
 # New battle system stuff below
 func takeDefendersFromTent():
 	var defenders = []
+	print(soldiers)
 	for soldier in soldiers:
 		defenders.append(soldier)
 	
