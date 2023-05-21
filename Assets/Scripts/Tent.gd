@@ -101,6 +101,13 @@ func getSoldiers():
 	return soldiers
 
 
+func stopSpawnTimer():
+	timer.stop()
+
+
+func startSpawnTimer():
+	timer.start()
+
 
 # New battle system stuff below
 func takeDefendersFromTent():

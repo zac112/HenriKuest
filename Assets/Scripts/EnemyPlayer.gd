@@ -11,6 +11,7 @@ func setHome(home):
 	
 func setTeam(num):
 	self.team = num
+	
 func getFollowers():
 	return followers
 	
