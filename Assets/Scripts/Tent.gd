@@ -101,14 +101,14 @@ func getSoldiers():
 
 
 # New battle system stuff below
-func getDefenders():
+func takeDefendersFromTent():
 	var defenders = []
 	for soldier in soldiers:
 		defenders.append(soldier)
 	
+	soldiers.clear()
+	
 	return defenders
 	
-
-func removeDefenders(defendersToBeRemoved):
-	for defender in defendersToBeRemoved:
-		soldiers.erase(defender)
+func getCurrentOwner():
+	return ownerPlayerNumber

@@ -1,25 +1,32 @@
 extends Node
 
-
-# Declare member variables here. Examples:
 var defenders = []
 var attackers = []
 var battleTimer = Timer.new()
 var tent
 var attackingPlayer
+var defendingPlayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tent = get_parent()
 	attackingPlayer = tent.getCurrentAttacker()
-	_getDefenders()
-	_getAttackers()
+	defendingPlayer = tent.getCurrentOwner()
+	_takeDefendersFromTent()
+	_takeSoldiersFromPlayer()
+	_setUpBattleTimer()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	_simulateCombat()
+#func _process(delta):
+	#pass
+
+
+func _setUpBattleTimer():
+	battleTimer.wait_time = 1
+	add_child(battleTimer)
+	battleTimer.connect("timeout", self, "_simulateCombat")
 
 
 # Ends combat if runs out of attackers or defenders, otherwise kills units
@@ -36,19 +43,27 @@ func _killUnits():
 	attackers.pop_back().queue_free()
 
 
-func _getDefenders():
+func _takeDefendersFromTent():
 	var newDefenders = tent.getDefenders()
 	
 	for defender in newDefenders:
 		defenders.append(defender)
 	
 	
-func _getAttackers():
-	var newAttackers = attackingPlayer.getAttackers()
-	
+func _takeSoldiersFromPlayer():
+	pass
+
+
+func _addDefenders(newDefenders):
+	for defender in newDefenders:
+		defenders.append(defender)
+
+
+func _addAttackers(newAttackers):
 	for attacker in newAttackers:
 		attackers.append(attacker)
 	
-	
 func _endBattle():
-	pass
+	#STUFF TO DO
+	
+	queue_free()
