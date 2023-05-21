@@ -36,16 +36,19 @@ var canWin = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if gridID == 0:
+		print("GRIDID: ", gridID)
 		self.visible = false
 	else:
 		get_parent().get_node("Control").get_node("Victory").visible = false
 		get_parent().get_node("Control").get_node("Loss").visible = false
-		get_parent().get_node("Control").visible = false
+		# get_parent().get_node("Control").visible = false
 	tents = [tent,tent2,tent3,tent4,tent_destroyed]
-	if gridID < 2:
-		generateGrid()
-	else:
+	if gridID == 0:
+		pass
+	elif (gridID < 2):
 		loadGrid(gridID)
+	else:
+		generateGrid()
 	
 func generateGrid():
 	var rng = RandomNumberGenerator.new()
@@ -92,6 +95,9 @@ func victory():
 	get_parent().get_node("Control").visible = true
 	get_parent().get_node("Control").get_node("Loss").visible = false
 	get_parent().get_node("Control").get_node("Victory").visible = true
+	if gridID == 1:
+		get_parent().get_node("Control").get_node("TutorialText").visible = false
+		get_parent().get_node("Control").get_node("TutorialText2").visible = false
 	# get_tree().change_scene("res://Assets/Scenes/winScreen.tscn")
 
 func loss():
@@ -100,6 +106,9 @@ func loss():
 	get_parent().get_node("Control").visible = true
 	get_parent().get_node("Control").get_node("Victory").visible = false
 	get_parent().get_node("Control").get_node("Loss").visible = true
+	if gridID == 1:
+		get_parent().get_node("Control").get_node("TutorialText").visible = false
+		get_parent().get_node("Control").get_node("TutorialText2").visible = false
 
 	
 func spawnTent(tile, number):

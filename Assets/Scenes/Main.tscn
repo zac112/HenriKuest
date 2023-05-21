@@ -27,7 +27,7 @@ font_data = ExtResource( 4 )
 script = ExtResource( 5 )
 width = 20
 height = 15
-gridID = 1
+gridID = 2
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 

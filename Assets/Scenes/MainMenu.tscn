@@ -87,6 +87,7 @@ command units.
 Go near enemy villages to start fighting"
 
 [node name="Loss" type="Label" parent="Control"]
+visible = false
 margin_top = 29.0
 margin_right = 1017.0
 margin_bottom = 131.0
