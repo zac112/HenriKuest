@@ -214,6 +214,9 @@ func loadGrid(ID):
 				if (children[1].is_in_group("Tents")):
 					spawnedTentsCount += 1
 					
+				if (children[1].is_in_group("Obstacle")):
+					obstaclePositions.append(Vector2(x,y))
+					
 			tiles[x].append(tile)
 	canWin = true
 	

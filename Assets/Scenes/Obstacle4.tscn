@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 24.5 )
 
-[node name="Obstacle" type="StaticBody2D"]
+[node name="Obstacle" type="StaticBody2D" groups=["Obstacle"]]
 collision_layer = 4
 
 [node name="Square" type="Sprite" parent="."]
