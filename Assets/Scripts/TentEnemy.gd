@@ -9,6 +9,7 @@ var attacker_team = null
 var combat = false
 var attackers = []
 var defenders = []
+var attackTimer = Timer.new()
 var battleTimer = Timer.new()
 var parentSquare
 export var minDefendersToAttack = 1
@@ -18,9 +19,14 @@ var grid
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parentSquare = get_parent().get_parent()
+	add_child(attackTimer)
+	attackTimer.wait_time = 1
+	attackTimer.connect("timeout", self, "_tryAttack")
+	attackTimer.start()
 	add_child(battleTimer)
 	battleTimer.wait_time = 1
 	battleTimer.connect("timeout", self, "_killTroops")
+	
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
 	symbol = battle_symbol.instance()
@@ -29,8 +35,9 @@ func _ready():
 	rng.randomize()
 	
 func _on_body_entered(body:Node):
-	if (!body.is_in_group("Bishop")):
-		return
+	if !body.is_in_group("Bishop"): return		
+	if !body.is_in_group("Player") and get_parent()==body.homenode: return
+	
 	#own village
 	if (body.team == getTeam()):
 		if (body.team != 0):
@@ -44,9 +51,7 @@ func _on_body_entered(body:Node):
 	combat = true
 	defenders = get_parent().getSoldiers()
 	_getAttackersFromPlayer(body)
-	#removing the bishop if not player
-	if body.team != 0:
-		body.queue_free()
+
 
 
 func _on_body_exited(body:Node):
@@ -65,14 +70,22 @@ func _process(delta):
 		symbolShowing = false
 		get_parent().remove_child(symbol)
 		
-	if getTeam() != 0 and combat == false && defenders.size() >= minDefendersToAttack:
-		if rng.randi_range(0, 10000) == 1:
-			_attack()
+
 		
 func getTeam():
 	return get_parent().ownerPlayerNumber
 
+func _tryAttack():
+	var x = len(defenders)
+	var a = 1.67
+	var b = 5
+	var c = -16.7
+	if getTeam() != 0 and combat == false:
+		if rng.randi_range(0, 100) < a*x*x + b*x + c:
+			_attack()
+			
 func _attack():
+	print("attack ")
 	var playerTents = _getPlayerTents()
 	
 	if playerTents.size() == 0:
@@ -89,10 +102,10 @@ func _attack():
 
 	var enemyPlayer = enemy_player.instance()
 	enemyPlayer.setTeam(getTeam())
+	enemyPlayer.setHome(get_parent())
+	enemyPlayer.position = parentSquare.position
 	grid.add_child(enemyPlayer)
 	
-	enemyPlayer.position.x = parentSquare.position.x
-	enemyPlayer.position.y = parentSquare.position.y
 	var path = get_node("/root/Main Node/GridManager").findPath(enemyPlayer.global_position, closestTent.get_parent().global_position)
 	enemyPlayer.travelPath(path)
 	for defender in defenders:

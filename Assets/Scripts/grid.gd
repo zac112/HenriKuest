@@ -41,21 +41,6 @@ func _ready():
 	else:
 		loadGrid(gridID)
 	
-	
-	var timer = Timer.new()
-	add_child(timer)
-	timer.connect("timeout",self,"startAI")
-	timer.set_one_shot(true)
-	timer.start()
-	
-func startAI():
-	var path = findPath(Vector2(0,0), Vector2(528,528))
-	var AI = load("res://Assets/Scenes/PlayerAI.tscn").instance()
-	add_child(AI)
-	AI.global_position = Vector2(50,50)
-	AI.travelPath(path)
-	
-
 func generateGrid():
 	var rng = RandomNumberGenerator.new()
 	for x in range(width):
