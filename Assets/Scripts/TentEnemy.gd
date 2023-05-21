@@ -33,6 +33,9 @@ func _on_body_entered(body:Node):
 		return
 	#own village
 	if (body.team == getTeam()):
+		if (body.team != 0):
+			get_parent().addSoldiers(body.getFollowers())
+			body.queue_free()
 		return
 	#only one team can attack a tent at the same time
 	if (attacker_team != null and attacker_team != body.team):

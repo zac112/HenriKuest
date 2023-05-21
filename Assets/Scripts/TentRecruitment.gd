@@ -29,13 +29,7 @@ func _ready():
 	
 	symbol = battle_symbol.instance()
 
-func _on_body_entered(body:Node):
-	if body.is_in_group("AIPlayer"):
-		attackingPlayers.append(body)
-		attackerID = body.attackerID
-		_getAttackersFromPlayer(body)
-		combat = true
-		
+func _on_body_entered(body:Node):		
 	if body.is_in_group("Player"):
 		player = body
 		recruitable = true
