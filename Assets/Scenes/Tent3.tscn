@@ -7,10 +7,10 @@
 [ext_resource path="res://Assets/Scripts/TentEnemy.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Scripts/tentZIndex.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.5, 14 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 27.7218
 
-[node name="Node2D3" type="Node2D" groups=["Tents"]]
+[node name="Node2D4" type="Node2D" groups=["Tents"]]
 script = ExtResource( 1 )
 ownerPlayerNumber = 2
 

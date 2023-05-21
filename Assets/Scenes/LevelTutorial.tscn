@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Scripts/Tile.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Scenes/Obstacle2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Scenes/Tent4.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Scenes/Pelimusiikki.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Audio/Untitled song (1).mp3" type="AudioStream" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -2484,6 +2485,10 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="GridManager/Tile299"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
+
+[node name="Audio" type="AudioStreamPlayer" parent="GridManager"]
+pause_mode = 1
+stream = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -28, 30 )

@@ -125,6 +125,10 @@ func loss():
 
 	
 func spawnTent(tile, number):
+	if(number == 0):
+		if(not($Audio == null)):
+			$Audio.play()
+			$Audio.stop()
 	if number == 0:
 		playerTents+=1
 	if number != 4:
