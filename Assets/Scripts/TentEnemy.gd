@@ -4,7 +4,6 @@ const enemy_player = preload("res://Assets/Scenes/EnemyPlayer.tscn")
 var battleScene = load("res://Assets/Scenes/Battle.tscn")
 var currentBattle
 var rng = RandomNumberGenerator.new()
-# Declare member variables here. Examples:
 var attacker_team = null
 var currentAttacker = null
 var soldiers = []
@@ -48,6 +47,7 @@ func _on_body_entered(body:Node):
 		currentBattle = battleScene.instance()
 		add_child(currentBattle)
 		attackTimer.stop()
+		get_parent().stopSpawnTimer()
 	
 	
 
@@ -72,7 +72,6 @@ func _tryAttack():
 			_attack()
 			
 func _attack():
-	print("attack ")
 	var playerTents = _getPlayerTents()
 	
 	if playerTents.size() == 0:
@@ -138,3 +137,4 @@ func endBattle(winnerTeam, remainingTroops):
 	get_parent().addSoldiers(remainingTroops)
 	
 	attackTimer.start()
+	get_parent().startSpawnTimer()
