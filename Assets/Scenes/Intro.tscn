@@ -65,7 +65,6 @@ command units.
 Go near enemy villages to start fighting"
 
 [node name="Loss" type="Label" parent="Control"]
-visible = false
 margin_top = 29.0
 margin_right = 1017.0
 margin_bottom = 131.0
@@ -74,12 +73,12 @@ text = "You lost!"
 align = 1
 valign = 1
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="Control/Loss"]
 anchor_bottom = 0.083
 margin_left = 372.0
-margin_top = 344.0
+margin_top = 315.0
 margin_right = 675.0
-margin_bottom = 400.0
+margin_bottom = 371.0
 custom_fonts/font = SubResource( 6 )
 text = "Play"
 script = ExtResource( 7 )
