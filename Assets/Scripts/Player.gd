@@ -70,8 +70,7 @@ func takeSoldiersFromPlayer():
 	
 	return soldiers
 
-func getTeam():
-	return team
+func getTeam(): return team
 
 func destroyIfNotHuman():
 	pass

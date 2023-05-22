@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/TentBattleTrigger.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 50.0899
+
+[node name="TentBattleTrigger" type="Node2D"]
+
+[node name="TriggerArea" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+shape = SubResource( 1 )

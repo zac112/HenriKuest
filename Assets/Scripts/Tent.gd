@@ -4,14 +4,13 @@ var soldiers = []
 export var ownerTeamNumber = 0
 var grid
 var tentProduction = load("res://Assets/Scenes/TentProduction.tscn")
+var tentBattleTrigger = load("res://Assets/Scenes/TentBattleTrigger.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var production = tentProduction.instance()
-	add_child(production)
-	
 	self.add_to_group("Tents")
+	setUpChildNodes()
 	grid = get_tree().current_scene.get_node("GridManager")
 	
 
@@ -19,11 +18,18 @@ func _ready():
 #func _process(delta):
 	#pass
 	
+	
+func setUpChildNodes():
+	var production = tentProduction.instance()
+	add_child(production)
+	var battleTrigger = tentBattleTrigger.instance()
+	add_child(battleTrigger)
+	
 
 func getOwnerTeamNumber(): return ownerTeamNumber
 func getNumberOfSoldiers(): return len(soldiers)
 func _destroy(): queue_free()
-func isInCombat(): return get_node("Area2D2").currentBattle != null
+func isInCombat(): return get_node("TentBattleTrigger").currentBattle != null
 
 
 # Change the ownership of the tent by destroying current one and spawning

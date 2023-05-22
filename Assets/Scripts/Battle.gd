@@ -48,7 +48,6 @@ func _simulateCombat():
 		_killUnits()
 	
 
-
 # Kills one attacker and one defender
 func _killUnits():
 	defenders.pop_back().queue_free()

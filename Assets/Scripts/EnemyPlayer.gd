@@ -32,8 +32,7 @@ func takeSoldiersFromPlayer():
 	followers = []
 	return result
 
-func getTeam():
-	return team
+func getTeam(): return team
 
 func destroyIfNotHuman():
 	for follower in followers:
