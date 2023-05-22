@@ -8,7 +8,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[node name="Node2D2" type="Node2D" groups=["Tents"]]
+[node name="Tent2" type="Node2D" groups=["Tents"]]
 script = ExtResource( 2 )
 ownerTeamNumber = 1
 

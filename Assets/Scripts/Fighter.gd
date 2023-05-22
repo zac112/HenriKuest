@@ -27,7 +27,6 @@ func _ready():
 	cell_width = grid.tileSize
 	width = grid.width
 	height = grid.height
-	#print("Width " + str(width) + " h: " + str(height))
 	startMoving()
 
 func setTent(tent):

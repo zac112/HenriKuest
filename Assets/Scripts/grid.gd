@@ -191,7 +191,6 @@ func findPath(start:Vector2, end:Vector2):
 				for toPos in path.keys():
 					var fromPos = path[toPos]
 					if toPos.is_equal_approx(result.back()):
-						#print(fromPos," -> ",toPos)
 						result.append(fromPos)
 						break
 								

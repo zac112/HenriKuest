@@ -1,18 +1,16 @@
 extends Node
 
 const enemy_player = preload("res://Assets/Scenes/EnemyPlayer.tscn")
-var battleScene = load("res://Assets/Scenes/Battle.tscn")
-var currentBattle
 var rng = RandomNumberGenerator.new()
-var attacker_team = null
-var currentAttacker = null
 var parentSquare
+var parentTent
 var attackTimer = Timer.new()
 export var minDefendersToAttack = 1
 
 var grid
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	parentTent = get_parent()
 	parentSquare = get_parent().get_parent()
 	add_child(attackTimer)
 	attackTimer.wait_time = 1
@@ -22,41 +20,11 @@ func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	grid = get_tree().current_scene.get_node("GridManager")
 	rng.randomize()
-	
-func _on_body_entered(body:Node):
-	if !body.is_in_group("Bishop"): return		
-	if !body.is_in_group("Player") and get_parent()==body.homenode: return
-	
-	
-	#own village
-	if (body.team == getTeam()):
-		if (body.team != 0):			
-			get_parent().addSoldiers(body.takeSoldiersFromPlayer())
-		return
-	
-	#only one team can attack a tent at the same time
-	if (attacker_team != null and attacker_team != body.team):
-		return
-		
-	if !body.is_in_group("Player"):
-		if !body.isPathAlmostEmpty():
-			return
-	
-	if currentBattle == null:
-		attacker_team = body.team
-		currentAttacker = body
-		currentBattle = battleScene.instance()
-		add_child(currentBattle)
-		attackTimer.stop()
-		#get_parent().stopSpawnTimer()
-	else:
-		body.destroyIfNotHuman()
-	
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if getTeam() != 0 and currentBattle == null:
+	if getTeam() != 0 and parentTent.isInCombat() == false:
 		if rng.randi_range(0, 10000) == 1:
 			_attack()
 
@@ -111,23 +79,6 @@ func _getPlayerTents():
 	
 	return playerTents
 	
-func getCurrentAttacker():
-	return currentAttacker
 
-
-func getTargetableNode():
-	return parentSquare
-	
-
-func takeDefendersFromTent():
-	return get_parent().takeDefendersFromTent()
-
-
-func endBattle(winnerTeam, remainingTroops):
-	currentBattle = null
-	attacker_team = null
-	
-	var newTent = get_parent().setOwnership(winnerTeam)
-	newTent.addSoldiers(remainingTroops)
-	
-	#newTent.startSpawnTimer()
+func getTargetableNode(): return parentSquare
+func takeDefendersFromTent(): return parentTent.takeDefendersFromTent()

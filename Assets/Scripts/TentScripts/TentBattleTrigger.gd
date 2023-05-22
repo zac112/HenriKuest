@@ -24,7 +24,7 @@ func _on_body_entered(body:Node):
 	# Own village
 	if (body.getTeam() == parentTent.getOwnerTeamNumber()):
 		if (body.getTeam() != 0):			
-			get_parent().addSoldiers(body.takeSoldiersFromPlayer())
+			parentTent.addSoldiers(body.takeSoldiersFromPlayer())
 		return
 	
 	# Only one team can attack a tent at the same time
@@ -50,7 +50,7 @@ func getTeam(): return parentTent.getOwnerTeamNumber()
 func getCurrentAttacker(): return currentAttacker
 func getTargetableNode(): return parentSquare
 func takeDefendersFromTent(): return parentTent.takeDefendersFromTent()
-
+func getCurrentBattle(): return currentBattle
 
 func endBattle(winnerTeam, remainingTroops):
 	currentBattle = null
