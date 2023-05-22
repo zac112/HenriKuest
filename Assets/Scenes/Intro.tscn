@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/Scenes/GridManager.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Scenes/visibility.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Scripts/visibility.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=7]
 size = 24

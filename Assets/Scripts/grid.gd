@@ -1,6 +1,6 @@
 extends Node2D
 
-const tile_path = preload("res://Assets/prefabs/Tile.tscn")
+const tile_path = preload("res://Assets/Scenes/Tile.tscn")
 const leftup = preload("res://Assets/Sprites/Grid sprites/1.png")
 const leftdown = preload("res://Assets/Sprites/Grid sprites/3.png")
 const rightup = preload("res://Assets/Sprites/Grid sprites/2.png")
