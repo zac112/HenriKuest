@@ -36,7 +36,7 @@ var canWin = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if gridID == 0:
-		print("GRIDID: ", gridID)
+		#print("GRIDID: ", gridID)
 		self.visible = false
 	else:
 		get_parent().get_node("Control").get_node("Victory").visible = false
@@ -68,7 +68,6 @@ func generateGrid():
 	for x in range(width):
 		tiles.append([])
 		for y in range(height):
-			#print(str(x) + " " + str(y))
 			var pos = Vector2(x * tileSize - gridOffset, y * tileSize - gridOffset)
 			
 			var tile = tile_path.instance()
@@ -133,13 +132,13 @@ func spawnTent(tile, number):
 		playerTents+=1
 	if number != 4:
 		spawnedTentsCount+=1
-	print("Player: " + str(playerTents) + " Total: " + str(spawnedTentsCount))
+	#print("Player: " + str(playerTents) + " Total: " + str(spawnedTentsCount))
 	if (playerTents == 0 and canWin):
-		print("loss")
+		#print("loss")
 		canWin = false
 		loss()
 	elif (playerTents >= spawnedTentsCount and canWin):
-		print("victory")
+		#print("victory")
 		canWin = false
 		victory()
 

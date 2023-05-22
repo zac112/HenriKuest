@@ -33,7 +33,7 @@ func _on_body_entered(body:Node):
 			get_parent().addSoldiers(body.takeSoldiersFromPlayer())
 		return
 	
-		#only one team can attack a tent at the same time
+	#only one team can attack a tent at the same time
 	if (attacker_team != null and attacker_team != body.team):
 		return
 		
@@ -60,7 +60,7 @@ func _process(delta):
 			_attack()
 
 func getTeam():
-	return get_parent().ownerPlayerNumber
+	return get_parent().getOwnerTeamNumber()
 
 func _tryAttack():
 	var x = get_parent().getDefenderAmount()
