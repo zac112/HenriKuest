@@ -11,12 +11,13 @@
 [ext_resource path="res://Assets/Scripts/PlayButton.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Scenes/Obstacle3.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Scenes/Tent.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Scenes/TentScenes/Tent.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Scenes/Obstacle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Scenes/Obstacle2.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Scenes/Tent4.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Scenes/TentScenes/Tent4.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Scenes/Pelimusiikki.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Audio/Untitled song (1).mp3" type="AudioStream" id=17]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 64

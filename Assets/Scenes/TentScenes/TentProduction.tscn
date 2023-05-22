@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Scripts/TentProduction.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Scripts/TentFillbar.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scripts/TentScripts/TentProduction.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/TentScripts/TentFillbar.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sprites/Square.png" type="Texture" id=3]
 
 [node name="TentProduction" type="Node2D"]

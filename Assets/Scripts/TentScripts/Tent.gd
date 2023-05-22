@@ -3,8 +3,8 @@ extends Node
 var soldiers = []
 export var ownerTeamNumber = 0
 var grid
-var tentProduction = load("res://Assets/Scenes/TentProduction.tscn")
-var tentBattleTrigger = load("res://Assets/Scenes/TentBattleTrigger.tscn")
+var tentProduction = load("res://Assets/Scenes/TentScenes/TentProduction.tscn")
+var tentBattleTrigger = load("res://Assets/Scenes/TentScenes/TentBattleTrigger.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

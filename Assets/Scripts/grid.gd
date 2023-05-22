@@ -6,11 +6,11 @@ const leftdown = preload("res://Assets/Sprites/Grid sprites/3.png")
 const rightup = preload("res://Assets/Sprites/Grid sprites/2.png")
 const rightdown = preload("res://Assets/Sprites/Grid sprites/4.png")
 
-const tent = preload("res://Assets/Scenes/Tent.tscn")
-const tent2 = preload("res://Assets/Scenes/Tent2.tscn")
-const tent3 = preload("res://Assets/Scenes/Tent3.tscn")
-const tent4 = preload("res://Assets/Scenes/Tent4.tscn")
-const tent_destroyed = preload("res://Assets/Scenes/Tent_destroyed.tscn")
+const tent = preload("res://Assets/Scenes/TentScenes/Tent.tscn")
+const tent2 = preload("res://Assets/Scenes/TentScenes/Tent2.tscn")
+const tent3 = preload("res://Assets/Scenes/TentScenes/Tent3.tscn")
+const tent4 = preload("res://Assets/Scenes/TentScenes/Tent4.tscn")
+const tent_destroyed = preload("res://Assets/Scenes/TentScenes/Tent_destroyed.tscn")
 
 
 var tiles = [[]]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/Tents.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Sprite
+
+export var zIndex = 25
+# Declare member variables here. Examples:
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	z_index = zIndex
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="Node2D2" type="Node2D" groups=["Tents"]]
+
+[node name="Tents" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 53, 0, 13, 17 )
+script = SubResource( 1 )
