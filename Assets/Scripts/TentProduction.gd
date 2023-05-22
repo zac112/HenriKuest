@@ -31,7 +31,7 @@ func _process(delta):
 
 
 # Returns the duration of next unit production.
-# Dependent on the current number of soldiers in tent
+# Dependent on the current number of soldiers in tent.
 func getNextWaitTime():
 	var x = get_parent().getNumberOfSoldiers()
 	var a = 1.17
@@ -40,7 +40,6 @@ func getNextWaitTime():
 	return a*x*x+b*x+c
 
 func stopSpawnTimer(): timer.stop()
-
 func startSpawnTimer(): timer.start()
 
 func resetTimer():
@@ -50,13 +49,13 @@ func resetTimer():
 
 # Called by timer countdown. Spawns the unit currently in production.
 func _handleSpawning():
-	var unit = spawnableUnits[get_parent().getOwnerTeamNumber]
+	var unit = spawnableUnits[get_parent().getOwnerTeamNumber()]
 
 	var spawn = unit.instance()
-	spawn.setTent(self.get_parent())
+	spawn.setTent(self.get_parent().get_parent())
 	grid.add_child(spawn)
-	spawn.position.x = self.get_parent().position.x
-	spawn.position.y = self.get_parent().position.y
+	spawn.position.x = self.get_parent().get_parent().position.x
+	spawn.position.y = self.get_parent().get_parent().position.y
 	_addProducedSoldierToTent(spawn)
 	
 	resetTimer()

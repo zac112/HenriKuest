@@ -27,6 +27,7 @@ func _on_body_entered(body:Node):
 	if !body.is_in_group("Bishop"): return		
 	if !body.is_in_group("Player") and get_parent()==body.homenode: return
 	
+	
 	#own village
 	if (body.team == getTeam()):
 		if (body.team != 0):			
@@ -47,7 +48,7 @@ func _on_body_entered(body:Node):
 		currentBattle = battleScene.instance()
 		add_child(currentBattle)
 		attackTimer.stop()
-		get_parent().stopSpawnTimer()
+		#get_parent().stopSpawnTimer()
 	else:
 		body.destroyIfNotHuman()
 	
@@ -63,7 +64,7 @@ func getTeam():
 	return get_parent().getOwnerTeamNumber()
 
 func _tryAttack():
-	var x = get_parent().getDefenderAmount()
+	var x = get_parent().getNumberOfSoldiers()
 	var a = 1.67
 	var b = 5
 	var c = -16.7
@@ -129,5 +130,4 @@ func endBattle(winnerTeam, remainingTroops):
 	var newTent = get_parent().setOwnership(winnerTeam)
 	newTent.addSoldiers(remainingTroops)
 	
-	#newTent.attackTimer.start()
-	newTent.startSpawnTimer()
+	#newTent.startSpawnTimer()

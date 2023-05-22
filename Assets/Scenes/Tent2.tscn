@@ -11,7 +11,7 @@
 
 [node name="Node2D2" type="Node2D" groups=["Tents"]]
 script = ExtResource( 1 )
-ownerPlayerNumber = 1
+ownerTeamNumber = 1
 
 [node name="Tents" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )

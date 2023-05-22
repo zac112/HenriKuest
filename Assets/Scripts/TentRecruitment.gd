@@ -50,4 +50,4 @@ func _recruitSoldiers():
 	var particle = particle_effect_scene.instance()
 	add_child(particle)
 	particle.global_position = self.global_position
-	get_parent().resetTimer()
+	#get_parent().resetTimer()
