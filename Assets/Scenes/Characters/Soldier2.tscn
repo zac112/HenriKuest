@@ -5,7 +5,6 @@
 [ext_resource path="res://Assets/Scripts/Characters/FighterAnim.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scripts/Effects/Particles2D.gd" type="Script" id=4]
 
-
 [sub_resource type="Curve" id=2]
 max_value = 465.74
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.481818 ), 0.0, 0.0, 0, 0 ]

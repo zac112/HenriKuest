@@ -18,6 +18,7 @@ var isBeingDestroyed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("Soldiers")
 	noise.seed = randi()
 	noise.octaves = 4
 	noise.period = 20.0
