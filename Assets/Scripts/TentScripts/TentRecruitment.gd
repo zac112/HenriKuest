@@ -9,7 +9,9 @@ var particle_effect_scene = preload("res://Assets/Scenes/recruit_particle.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_body_entered")
+# warning-ignore:return_value_discarded
 	connect("body_exited", self, "_on_body_exited")
 	
 	parentSquare = get_parent().get_parent()

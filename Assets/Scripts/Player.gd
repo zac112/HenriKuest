@@ -62,13 +62,8 @@ func _on_Player_body_entered(_body):
 
 
 func takeSoldiersFromPlayer():
-	var soldiers = []
-	
-	for follower in followers:
-		soldiers.append(follower)
-		
-	followers.clear()
-	
+	var soldiers = followers
+	followers = []
 	return soldiers
 
 func getTeam(): return team

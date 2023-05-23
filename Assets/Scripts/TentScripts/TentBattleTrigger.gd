@@ -11,6 +11,7 @@ var parentTent
 func _ready():
 	parentTent = get_parent().get_parent()
 	parentSquare = get_parent().get_parent().get_parent()
+# warning-ignore:return_value_discarded
 	connect("body_entered", self, "_on_body_entered")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

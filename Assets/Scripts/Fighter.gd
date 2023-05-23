@@ -1,7 +1,6 @@
 class_name Fighter
 extends Node2D
 
-
 var noise = OpenSimplexNoise.new()
 var rng = RandomNumberGenerator.new()
 var angle = 0
@@ -84,7 +83,6 @@ func _process(delta):
 
 func destroy():
 	isBeingDestroyed = true
-	
 	var safetyTimer = Timer.new()
 	add_child(safetyTimer)
 	safetyTimer.connect("timeout", self, "queue_free")

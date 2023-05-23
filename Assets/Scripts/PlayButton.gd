@@ -16,6 +16,8 @@ func _ready():
 func _pressed():
 	var currentScene = get_parent().get_parent().get_parent().get_node("GridManager").gridID
 	if (currentScene < (len(sceneList) - 1)):
+# warning-ignore:return_value_discarded
 		get_tree().change_scene(sceneList[currentScene + 1])
 	else:
+# warning-ignore:return_value_discarded
 		get_tree().change_scene(sceneList[currentScene])

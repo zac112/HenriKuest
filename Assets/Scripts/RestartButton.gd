@@ -13,4 +13,5 @@ func _ready():
 
 func _pressed():
 	var currentScene = get_parent().get_parent().get_parent().get_node("GridManager").gridID
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(sceneList[currentScene])
