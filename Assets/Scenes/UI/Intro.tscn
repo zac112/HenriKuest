@@ -1,0 +1,200 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Scenes/WorldGen/GridManager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Mainmenu/Intro.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scripts/UI/visibility.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sprites/Gamelogo.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Mainmenu/Background/Untitled.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Fonts/BACKTO1982.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Scripts/UI/PlayButton.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+outline_size = 2
+outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+outline_size = 2
+outline_color = Color( 0.176471, 0.223529, 0.529412, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+script = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="Control"]
+margin_left = 221.0
+margin_top = 583.0
+margin_right = 827.0
+margin_bottom = 864.0
+custom_fonts/font = SubResource( 7 )
+text = "Credits:
+Art: Onni Hassila
+Coding: Erno Lokkila, Andrei Belogurov, Timo
+Music: Samuli Mäkelä
+Playtesting: Samuli Mäkelä
+Bad time management and story: Taco"
+
+[node name="Label3" type="Label" parent="Control"]
+margin_left = 223.0
+margin_top = 447.0
+margin_right = 837.0
+margin_bottom = 610.0
+custom_fonts/font = SubResource( 8 )
+text = "How to play:
+Press C when close to village in order to
+command units.
+Go near enemy villages to start fighting"
+
+[node name="Victory" type="Label" parent="Control"]
+margin_top = 29.0
+margin_right = 1017.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 9 )
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="Control/Victory"]
+anchor_top = -0.284
+anchor_right = 1.0
+anchor_bottom = 7.245
+margin_left = 223.0
+margin_top = 351.968
+margin_right = -497.0
+margin_bottom = -351.524
+custom_fonts/font = SubResource( 6 )
+text = "Play"
+script = ExtResource( 8 )
+
+[node name="Storybutton" type="Button" parent="Control/Victory"]
+anchor_bottom = 0.083
+margin_left = 526.0
+margin_top = 323.0
+margin_right = 823.0
+margin_bottom = 379.0
+custom_fonts/font = SubResource( 6 )
+text = "Story"
+
+[node name="StoryLabel" type="Label" parent="Control"]
+visible = false
+margin_top = 131.0
+margin_right = 1173.0
+margin_bottom = 344.0
+rect_scale = Vector2( 0.873748, 1.05451 )
+custom_fonts/font = SubResource( 10 )
+text = "In a distant land not so far away, there was a Henrik.
+
+Henrik was a bishop on a chess board, he had won many battles, but one day the evil Lalli showed up.
+
+Lalli transformed the chess board into a land of dread and misery, replacing turn-based chess mechanics with 
+real-time strategy and all the pieces with flamehtrower-wielding minions.
+
+Henrik a questing man grabbed his mighty staff of wololo, and went on a quest to reclaim the land. On a HenriKuest!"
+align = 1
+
+[node name="Story2" type="Button" parent="Control"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 221.0
+margin_top = 361.0
+margin_right = 830.0
+margin_bottom = 416.0
+custom_fonts/font = SubResource( 6 )
+text = "Back"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+script = ExtResource( 2 )
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.001
+anchor_bottom = 1.0
+margin_right = -1.02405
+texture = ExtResource( 5 )
+
+[node name="Label1" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.073
+anchor_right = 0.5
+anchor_bottom = 0.082
+margin_left = -329.5
+margin_right = 329.5
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
+text = "In a distant land not so far away..."
+align = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.073
+anchor_right = 0.5
+anchor_bottom = 0.082
+margin_left = -289.5
+margin_right = 289.5
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
+text = "There was a Henrik..."
+align = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.073
+anchor_right = 0.5
+anchor_bottom = 0.082
+margin_left = -289.5
+margin_right = 289.5
+margin_bottom = 94.888
+custom_fonts/font = SubResource( 2 )
+text = "He was on a..."
+align = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GameLogo" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.119
+anchor_right = 0.5
+anchor_bottom = 0.202
+margin_left = -379.0
+margin_right = 379.0
+margin_bottom = 234.0
+texture = ExtResource( 4 )
+
+[node name="GridManager" parent="." instance=ExtResource( 1 )]
+
+[connection signal="pressed" from="Control/Victory/Storybutton" to="Control" method="_on_Storybutton_pressed"]
+[connection signal="pressed" from="Control/Story2" to="Control" method="_on_Story2_pressed"]
+[connection signal="visibility_changed" from="CanvasLayer/GameLogo" to="Control" method="_on_GameLogo_visibility_changed"]

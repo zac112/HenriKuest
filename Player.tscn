@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Sprites/RotatedPlayer.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/Player.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Characters/RotatedPlayer.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Characters/Player.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 31.06, 8.45133 )

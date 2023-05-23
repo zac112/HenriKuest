@@ -1,10 +1,10 @@
 extends Node
 
 var spawnableUnits
-var unit0 = load("res://Assets/Scenes/Soldier_ally.tscn")
-var unit1 = load("res://Assets/Scenes/Soldier.tscn")
-var unit2 = load("res://Assets/Scenes/Soldier2.tscn")
-var unit3 = load("res://Assets/Scenes/Soldier3.tscn")
+var unit0 = load("res://Assets/Scenes/Characters/Soldier_ally.tscn")
+var unit1 = load("res://Assets/Scenes/Characters/Soldier.tscn")
+var unit2 = load("res://Assets/Scenes/Characters/Soldier2.tscn")
+var unit3 = load("res://Assets/Scenes/Characters/Soldier3.tscn")
 var timer = Timer.new()
 var currentProduction
 var grid

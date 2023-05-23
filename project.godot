@@ -9,15 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "Reference",
 "class": "Fighter",
 "language": "GDScript",
-"path": "res://Assets/Scripts/Fighter.gd"
+"path": "res://Assets/Scripts/Characters/Fighter.gd"
 }, {
 "base": "Node",
 "class": "Tile",
 "language": "GDScript",
-"path": "res://Assets/Scripts/Tile.gd"
+"path": "res://Assets/Scripts/WorldGen/Tile.gd"
 } ]
 _global_script_class_icons={
 "Fighter": "",

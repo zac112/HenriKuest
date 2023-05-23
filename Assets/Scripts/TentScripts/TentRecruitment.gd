@@ -4,7 +4,7 @@ var recruit
 var recruitable = false
 var player
 var parentSquare
-var particle_effect_scene = preload("res://Assets/Scenes/recruit_particle.tscn")
+var particle_effect_scene = preload("res://Assets/Scenes/Effects/recruit_particle.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

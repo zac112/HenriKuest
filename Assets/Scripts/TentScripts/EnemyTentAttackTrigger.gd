@@ -1,6 +1,6 @@
 extends Node
 
-const enemy_player = preload("res://Assets/Scenes/EnemyPlayer.tscn")
+const enemy_player = preload("res://Assets/Scenes/Characters/EnemyPlayer.tscn")
 var rng = RandomNumberGenerator.new()
 var parentSquare
 var parentTent

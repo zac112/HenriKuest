@@ -1,6 +1,6 @@
 extends Node
 
-var battleScene = load("res://Assets/Scenes/Battle.tscn")
+var battleScene = load("res://Assets/Scenes/Battle/Battle.tscn")
 var currentBattle = null
 var attacker_team = null
 var currentAttacker = null
