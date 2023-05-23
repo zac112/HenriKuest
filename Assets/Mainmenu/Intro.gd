@@ -27,7 +27,7 @@ func intro():
 		yield(get_tree().create_timer(1.0), "timeout")
 		labelnumber += 1
 	get_node("GameLogo").visible = true
-	get_node("Control")
+
 	
 
 
@@ -44,6 +44,7 @@ func _ready():
 
 
 func _on_Label3_draw():
+# warning-ignore:return_value_discarded
 	get_node("Gamelogo")
 
 

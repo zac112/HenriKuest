@@ -46,7 +46,7 @@ func _ready():
 	if gridID == 0:
 		pass
 	elif (gridID < 5):
-		loadGrid(gridID)
+		loadGrid()
 	else:
 		generateGrid()
 	
@@ -223,7 +223,7 @@ func findPath(start:Vector2, end:Vector2):
 	
 	
 # Loading pre-made maps (grids?)
-func loadGrid(ID):
+func loadGrid():
 	for x in range(width):
 		tiles.append([])
 		for y in range(height):
