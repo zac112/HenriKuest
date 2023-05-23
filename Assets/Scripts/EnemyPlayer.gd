@@ -16,7 +16,7 @@ func travelPath(_path:Array):
 	add_child(timer)
 	timer.connect("timeout",self,"next")
 	timer.start()
-	self.path = path
+	self.path = _path
 	
 func next():
 	var pos = path.pop_front()

@@ -33,7 +33,7 @@ func setTent(tent):
 	setTarget(tent)	
 
 func setTarget(_target):
-	self.target = target
+	self.target = _target
 	
 func startMoving():
 	while true:

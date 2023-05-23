@@ -17,11 +17,8 @@ func _ready():
 	attackTimer.connect("timeout", self, "_tryAttack")
 	attackTimer.start()
 	
-
 	grid = get_tree().current_scene.get_node("GridManager")
 	rng.randomize()
-	
-	connect("body_entered", self, "_on_body_entered")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
