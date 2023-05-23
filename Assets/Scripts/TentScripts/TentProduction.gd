@@ -24,7 +24,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var percentDone = timer.get_time_left()/timer.get_wait_time()
 	if mask:
 		mask.setScale(1-percentDone)

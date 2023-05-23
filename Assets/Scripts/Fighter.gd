@@ -32,7 +32,7 @@ func _ready():
 func setTent(tent):
 	setTarget(tent)	
 
-func setTarget(target):
+func setTarget(_target):
 	self.target = target
 	
 func startMoving():

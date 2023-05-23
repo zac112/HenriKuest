@@ -196,7 +196,7 @@ func findPath(start:Vector2, end:Vector2):
 								
 			result.pop_back() #remove null at end
 			result.invert()
-			for i in range(len(result)):
+			for _i in range(len(result)):
 				result.append(CoordToWpos(result.pop_front()))
 			return result
 		

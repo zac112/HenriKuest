@@ -10,9 +10,9 @@ func _ready():
 	pass # Replace with function body.
 
 
-func addContent(content : Node):
-	self.content = content
-	self.add_child(content)
+func addContent(_content : Node):
+	self.content = _content
+	self.add_child(_content)
 	
 func clearTile():
 	self.remove_child(content)

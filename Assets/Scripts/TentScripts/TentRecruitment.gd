@@ -28,7 +28,7 @@ func _on_body_exited(body:Node):
 		recruit.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	_checkInput()
 
 func _checkInput():

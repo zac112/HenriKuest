@@ -17,13 +17,15 @@ func _ready():
 	attackTimer.connect("timeout", self, "_tryAttack")
 	attackTimer.start()
 	
-	connect("body_entered", self, "_on_body_entered")
+
 	grid = get_tree().current_scene.get_node("GridManager")
 	rng.randomize()
+	
+	connect("body_entered", self, "_on_body_entered")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if getTeam() != 0 and parentTent.isInCombat() == false:
 		if rng.randi_range(0, 10000) == 1:
 			_attack()
