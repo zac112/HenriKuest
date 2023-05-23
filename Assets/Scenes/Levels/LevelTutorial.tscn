@@ -18,7 +18,6 @@
 [ext_resource path="res://Assets/Scenes/Audio/Pelimusiikki.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Audio/Untitled song (1).mp3" type="AudioStream" id=17]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 10 )

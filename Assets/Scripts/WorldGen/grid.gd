@@ -110,7 +110,6 @@ func victory():
 	if gridID == 1:
 		get_parent().get_node("Control").get_node("TutorialText").visible = false
 		get_parent().get_node("Control").get_node("TutorialText2").visible = false
-	# get_tree().change_scene("res://Assets/Scenes/winScreen.tscn")
 
 func loss():
 	self.visible = false
@@ -122,7 +121,7 @@ func loss():
 		get_parent().get_node("Control").get_node("TutorialText").visible = false
 		get_parent().get_node("Control").get_node("TutorialText2").visible = false
 
-	
+
 func spawnTent(tile, number):
 	if(number == 0):
 		if(not($Audio == null)):
@@ -132,13 +131,10 @@ func spawnTent(tile, number):
 		playerTents+=1
 	if number != 4:
 		spawnedTentsCount+=1
-	#print("Player: " + str(playerTents) + " Total: " + str(spawnedTentsCount))
 	if (playerTents == 0 and canWin):
-		#print("loss")
 		canWin = false
 		loss()
 	elif (playerTents >= spawnedTentsCount and canWin):
-		#print("victory")
 		canWin = false
 		victory()
 
@@ -218,10 +214,6 @@ func findPath(start:Vector2, end:Vector2):
 	return []
 	
 
-	
-	
-	
-	
 # Loading pre-made maps (grids?)
 func loadGrid():
 	for x in range(width):

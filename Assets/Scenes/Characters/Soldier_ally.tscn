@@ -60,7 +60,7 @@ local_coords = false
 process_material = SubResource( 4 )
 script = ExtResource( 5 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["Soldiers"]]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource( 1 )
