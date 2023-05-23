@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="HenriKuest_gamejam"
-run/main_scene="res://Assets/Scenes/Main.tscn"
+run/main_scene="res://Assets/Scenes/Levels/Main.tscn"
 config/icon="res://Assets/Sprites/icon.png"
 
 [display]
