@@ -15,7 +15,7 @@ var isMoving = false
 var cell_width
 var width #width of grid
 var height #height of grid
-
+var isBeingDestroyed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,7 +36,7 @@ func setTarget(_target):
 	self.target = _target
 	
 func startMoving():
-	while true:
+	while !isBeingDestroyed:
 		yield(get_tree().create_timer(0.8), "timeout")
 		changeDirection()
 		if !is_instance_valid(target):return
@@ -82,4 +82,11 @@ func _process(delta):
 		move(delta)
 	
 
-
+func destroy():
+	isBeingDestroyed = true
+	
+	var safetyTimer = Timer.new()
+	add_child(safetyTimer)
+	safetyTimer.connect("timeout", self, "queue_free")
+	safetyTimer.set_wait_time(1)
+	safetyTimer.start()

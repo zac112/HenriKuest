@@ -36,5 +36,11 @@ func getTeam(): return team
 
 func destroyIfNotHuman():
 	for follower in followers:
-		follower.queue_free()
+		follower.destroy()
 	queue_free()
+
+	var safetyTimer = Timer.new()
+	add_child(safetyTimer)
+	safetyTimer.connect("timeout", self, "queue_free")
+	safetyTimer.set_wait_time(1)
+	safetyTimer.start()
