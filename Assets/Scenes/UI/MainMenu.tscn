@@ -5,7 +5,6 @@
 [ext_resource path="res://Assets/Scripts/UI/PlayButton.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Scenes/WorldGen/GridManager.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 40
 outline_size = 2

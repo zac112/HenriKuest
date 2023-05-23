@@ -243,7 +243,3 @@ func loadGrid():
 					
 			tiles[x].append(tile)
 	canWin = true
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

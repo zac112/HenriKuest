@@ -10,9 +10,6 @@ var currentProduction
 var grid
 onready var mask = get_node("FillBar/Light2D")
 
-export var timeBetweenSpawns = 20
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

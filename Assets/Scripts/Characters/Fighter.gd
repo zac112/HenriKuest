@@ -4,12 +4,10 @@ extends Node2D
 var noise = OpenSimplexNoise.new()
 var rng = RandomNumberGenerator.new()
 var angle = 0
-
-#Home tent position
 var target
 var max_dist = 50
-#Fighters won't move unless true
 
+#Fighters won't move unless true
 var isMoving = false
 var cell_width
 var width #width of grid

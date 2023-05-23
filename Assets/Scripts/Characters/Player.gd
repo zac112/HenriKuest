@@ -70,4 +70,3 @@ func getTeam(): return team
 
 func destroyIfNotHuman():
 	pass
-
