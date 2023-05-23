@@ -41,35 +41,25 @@ func _tryAttack():
 			_attack()
 			
 func _attack():
+	var closestTent = _findClosestTentViableForAttack()
+	#No available tents; skip attack
+	if closestTent == null: return
+	
+	var enemyBishop = _createEnemyBishop(closestTent)
+	_moveSoldiersFromTentToBishop(enemyBishop)
+
+
+func _findClosestTentViableForAttack():
 	var playerTents = _getPlayerTents()
-	
-	if playerTents.size() == 0:
-		return
-	
 	var closestTent = null
+	
 	for tent in playerTents:
 		if tent.isInCombat(): continue
 		if closestTent == null: closestTent = tent
 		if tent.get_parent().position.distance_to(parentSquare.position) < closestTent.get_parent().position.distance_to(parentSquare.position):
 			closestTent = tent
-	#No available tents; skip attack
-	if closestTent == null: return
-
-	var enemyPlayer = enemy_player.instance()
-	enemyPlayer.setTeam(getTeam())
-	enemyPlayer.setHome(get_parent())
-	#enemyPlayer.position = parentSquare.position
-
-	var path = get_parent().get_parent().get_parent().findPath(parentSquare.global_position, closestTent.get_parent().global_position)
 	
-	var soldiers = takeDefendersFromTent()
-	for soldier in soldiers:
-		soldier.setTarget(enemyPlayer)
-	enemyPlayer.followers = soldiers
-		
-	grid.add_child(enemyPlayer)
-	enemyPlayer.travelPath(path)
-	
+	return closestTent
 	
 func _getPlayerTents():
 	var playerTents = []
@@ -78,7 +68,25 @@ func _getPlayerTents():
 		playerTents.append(member)
 	
 	return playerTents
+
+func _createEnemyBishop(closestTent):
+	var enemyPlayer = enemy_player.instance()
+	enemyPlayer.setTeam(getTeam())
+	enemyPlayer.setHome(get_parent())
 	
+	var path = get_parent().get_parent().get_parent().findPath(parentSquare.global_position, closestTent.get_parent().global_position)
+	
+	grid.add_child(enemyPlayer)
+	enemyPlayer.travelPath(path)
+	
+	return enemyPlayer
+	
+
+func _moveSoldiersFromTentToBishop(enemyBishop):
+	var soldiers = takeDefendersFromTent()
+	for soldier in soldiers:
+		soldier.setTarget(enemyBishop)
+	enemyBishop.followers = soldiers
 
 func getTargetableNode(): return parentSquare
 func takeDefendersFromTent(): return parentTent.takeDefendersFromTent()
