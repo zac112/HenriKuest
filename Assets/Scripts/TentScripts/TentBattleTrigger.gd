@@ -23,8 +23,6 @@ func _on_body_entered(body:Node):
 	
 	# Own village
 	if (body.getTeam() == parentTent.getOwnerTeamNumber()):
-		if (body.getTeam() != 0):			
-			parentTent.addSoldiers(body.takeSoldiersFromPlayer())
 		return
 	
 	# Only one team can attack a tent at the same time
@@ -41,7 +39,7 @@ func _on_body_entered(body:Node):
 		currentAttacker = body
 		currentBattle = battleScene.instance()
 		add_child(currentBattle)
-		#parentTent.stopSpawnTimer()
+		parentTent.stopSpawnTimer()
 	else:
 		body.destroyIfNotHuman()
 	
@@ -58,5 +56,4 @@ func endBattle(winnerTeam, remainingTroops):
 	
 	var newTent = parentTent.setOwnership(winnerTeam)
 	newTent.addSoldiers(remainingTroops)
-	
-	#newTent.startSpawnTimer()
+	newTent.startSpawnTimer()

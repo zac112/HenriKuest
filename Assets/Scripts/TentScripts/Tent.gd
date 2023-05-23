@@ -37,7 +37,8 @@ func getOwnerTeamNumber(): return ownerTeamNumber
 func getNumberOfSoldiers(): return len(soldiers)
 func _destroy(): queue_free()
 func isInCombat(): return battleTrigger.get_node("TriggerArea").getCurrentBattle() != null
-
+func stopSpawnTimer(): get_node("TentProduction").stopSpawnTimer()
+func startSpawnTimer(): get_node("TentProduction").startSpawnTimer()
 
 # Change the ownership of the tent by destroying current one and spawning
 # new one for the appropriate team.
@@ -65,5 +66,5 @@ func addSoldiers(tempSoldiers):
 
 func takeDefendersFromTent():
 	var defenders = soldiers
-	soldiers = []	
+	soldiers = []
 	return defenders
