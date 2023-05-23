@@ -58,9 +58,7 @@ func addSoldier(soldier):
 func addSoldiers(tempSoldiers):
 	for soldier in tempSoldiers:
 		soldier.modulate = Color(1, 1, 1)
-		var follow_icon = soldier.get_node("FollowIcon")
-		if follow_icon != null:
-			follow_icon.visible = false
+		soldier.disableFollowIcon()
 		addSoldier(soldier)
 
 

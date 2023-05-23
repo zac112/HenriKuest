@@ -90,3 +90,9 @@ func destroy():
 	safetyTimer.connect("timeout", self, "queue_free")
 	safetyTimer.set_wait_time(1)
 	safetyTimer.start()
+
+func disableFollowIcon():
+	if is_in_group("AllySoldiers"):
+		var follow_icon = get_node("FollowIcon")
+		if follow_icon != null:
+			follow_icon.visible = false
