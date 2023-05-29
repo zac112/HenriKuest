@@ -26,6 +26,10 @@ func _ready():
 
 
 func _process(_delta):
+	processMovement()
+	
+
+func processMovement():
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -51,7 +55,6 @@ func _process(_delta):
 	else:
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.flip_h = false
-	
 
 func addFollower(follower):
 	followers.append(follower)
@@ -68,5 +71,4 @@ func takeSoldiersFromPlayer():
 
 func getTeam(): return team
 
-func destroyIfNotHuman():
-	pass
+func destroyIfNotHuman(): pass

@@ -22,10 +22,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if getTeam() != 0 and parentTent.isInCombat() == false:
-		if rng.randi_range(0, 10000) == 1:
-			_attack()
+#func _process(_delta):
+#	pass
 
 func getTeam():
 	return get_parent().getOwnerTeamNumber()
@@ -35,7 +33,7 @@ func _tryAttack():
 	var a = 1.67
 	var b = 5
 	var c = -16.7
-	if getTeam() != 0:
+	if getTeam() != 0 and parentTent.isInCombat() == false:
 		if rng.randi_range(0, 100) < a*x*x + b*x + c:
 			_attack()
 			
