@@ -5,7 +5,6 @@ var rng = RandomNumberGenerator.new()
 var parentSquare
 var parentTent
 var attackTimer = Timer.new()
-export var minDefendersToAttack = 1
 
 var grid
 # Called when the node enters the scene tree for the first time.
@@ -13,7 +12,7 @@ func _ready():
 	parentTent = get_parent()
 	parentSquare = get_parent().get_parent()
 	add_child(attackTimer)
-	attackTimer.wait_time = 1
+	attackTimer.wait_time = 2
 	attackTimer.connect("timeout", self, "_tryAttack")
 	attackTimer.start()
 	
