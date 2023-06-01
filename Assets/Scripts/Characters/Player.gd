@@ -15,6 +15,8 @@ var bishopSlapArea
 var bishopSlapAvailable = true
 var slapCooldownTimer
 var slapCooldown = 8
+onready var mask = get_node("SlapFillBar/Light2D")
+
 
 func getTeam(): return team
 func destroyIfNotHuman(): pass
@@ -38,6 +40,7 @@ func _ready():
 func _process(_delta):
 	processMovement()
 	processOtherInput()
+	processSlapCooldownBar()
 
 func processMovement():
 	var velocity = Vector2.ZERO # The player's movement vector.
@@ -119,3 +122,8 @@ func bishopSlap(bishopsInRange):
 func restoreBishopSlap():
 	bishopSlapAvailable = true
 	print("Restored slap!")
+
+func processSlapCooldownBar():
+	var percentDone = slapCooldownTimer.get_time_left()/slapCooldownTimer.get_wait_time()
+	if mask:
+		mask.setScale(1-percentDone)

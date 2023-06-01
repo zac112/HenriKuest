@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Scripts/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/RotatedPlayer.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Scripts/UI/Fillbar.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sprites/Characters/Player.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Square.png" type="Texture" id=5]
 
 [sub_resource type="ParticlesMaterial" id=5]
 render_priority = 4
@@ -72,3 +74,18 @@ shape = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BishopSlapArea"]
 shape = SubResource( 7 )
+
+[node name="SlapFillBar" type="Sprite" parent="."]
+position = Vector2( -1, -30 )
+scale = Vector2( 0.4, 0.1 )
+texture = ExtResource( 5 )
+offset = Vector2( 2.38419e-07, 0 )
+
+[node name="Light2D" type="Light2D" parent="SlapFillBar"]
+position = Vector2( -32, 0 )
+scale = Vector2( 1.012, 1 )
+texture = ExtResource( 5 )
+offset = Vector2( 31.4286, 0 )
+color = Color( 0, 0.505882, 1, 1 )
+mode = 2
+script = ExtResource( 3 )
