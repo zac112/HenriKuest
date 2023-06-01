@@ -14,7 +14,7 @@ var team = 0
 var bishopSlapArea
 var bishopSlapAvailable = true
 var slapCooldownTimer
-var slapCooldown = 2
+var slapCooldown = 8
 
 func getTeam(): return team
 func destroyIfNotHuman(): pass
@@ -113,6 +113,7 @@ func bishopSlap(bishopsInRange):
 		bishop.getSlapped()
 		
 	bishopSlapAvailable = false
+	slapCooldownTimer.start()
 
 
 func restoreBishopSlap():

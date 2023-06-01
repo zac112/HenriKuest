@@ -5,6 +5,10 @@ var followers = []
 var path
 var homenode
 var timer = Timer.new()
+var slappingHand
+
+func _ready():
+	slappingHand = get_node("SlappingHand")
 
 func setHome(home):
 	homenode = home
@@ -47,4 +51,7 @@ func destroyIfNotHuman():
 
 func getSlapped():
 	timer.stop()
+	slappingHand.visible = true
+	slappingHand.play()
+	yield($SlappingHand, "animation_finished")
 	destroyIfNotHuman()

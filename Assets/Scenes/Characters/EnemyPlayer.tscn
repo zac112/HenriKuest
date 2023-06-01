@@ -1,12 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Scripts/Characters/EnemyPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/EnemyPlayer.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Hand1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Hand2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Hand3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Hand4.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1.55556, 0.944444 )
 
 [sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Slap",
+"speed": 5.0
+} ]
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=["Bishop", "Slappable"]]
 position = Vector2( -100, -100 )
@@ -27,3 +39,11 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CommandArea"]
 scale = Vector2( 5, 5 )
 shape = SubResource( 2 )
+
+[node name="SlappingHand" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 0.2, 0.2 )
+z_index = 40
+frames = SubResource( 3 )
+animation = "Slap"
+speed_scale = 2.0
