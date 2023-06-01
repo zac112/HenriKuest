@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Scripts/Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Characters/RotatedPlayer.png" type="Texture" id=2]
@@ -34,6 +34,9 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=6]
 
+[sub_resource type="CircleShape2D" id=7]
+radius = 62.0
+
 [node name="Player" type="KinematicBody2D" groups=["Bishop", "Player"]]
 position = Vector2( 82, 48 )
 z_index = 30
@@ -64,3 +67,8 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CommandArea"]
 scale = Vector2( 5, 5 )
 shape = SubResource( 6 )
+
+[node name="BishopSlapArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BishopSlapArea"]
+shape = SubResource( 7 )

@@ -11,6 +11,14 @@ export var player_start_y = 10
 export var speed = 200
 var followers = []
 var team = 0
+var bishopSlapArea
+var bishopSlapAvailable = true
+var slapCooldownTimer
+var slapCooldown = 2
+
+func getTeam(): return team
+func destroyIfNotHuman(): pass
+func addFollower(follower): followers.append(follower)
 
 func _ready():
 	$CollisionShape2D.disabled = false
@@ -23,11 +31,13 @@ func _ready():
 	position.x = player_start_x
 	position.y = player_start_y
 	cell_width = grid.tileSize
+	bishopSlapArea = get_node("BishopSlapArea")
+	setUpSlapCooldownTimer()
 
 
 func _process(_delta):
 	processMovement()
-	
+	processOtherInput()
 
 func processMovement():
 	var velocity = Vector2.ZERO # The player's movement vector.
@@ -56,8 +66,6 @@ func processMovement():
 		$AnimatedSprite.animation = "default"
 		$AnimatedSprite.flip_h = false
 
-func addFollower(follower):
-	followers.append(follower)
 
 func _on_Player_body_entered(_body):
 	emit_signal("hit")
@@ -69,6 +77,44 @@ func takeSoldiersFromPlayer():
 	followers = []
 	return soldiers
 
-func getTeam(): return team
 
-func destroyIfNotHuman(): pass
+func processOtherInput():
+	if (bishopSlapAvailable && Input.is_action_pressed("bishop_slap")):
+		attemptBishopSlap()
+
+func attemptBishopSlap():
+	var bishopsInRange = getEnemyBishopsInRange()
+	if (bishopsInRange != null):
+		if (len(bishopsInRange) < 1):
+			return
+		else:
+			slapCooldownTimer.stop()
+			bishopSlap(bishopsInRange)
+
+func getEnemyBishopsInRange():
+	var bodiesInRange = bishopSlapArea.get_overlapping_bodies()
+	var bishopsInRange = []
+	
+	for body in bodiesInRange:
+		if body.is_in_group("Slappable"):
+			bishopsInRange.append(body)
+	
+	return bishopsInRange
+
+func setUpSlapCooldownTimer():
+	slapCooldownTimer = Timer.new()
+	add_child(slapCooldownTimer)
+	slapCooldownTimer.connect("timeout", self, "restoreBishopSlap")
+	slapCooldownTimer.wait_time = slapCooldown
+
+
+func bishopSlap(bishopsInRange):
+	for bishop in bishopsInRange:
+		bishop.getSlapped()
+		
+	bishopSlapAvailable = false
+
+
+func restoreBishopSlap():
+	bishopSlapAvailable = true
+	print("Restored slap!")

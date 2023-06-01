@@ -44,3 +44,7 @@ func destroyIfNotHuman():
 	safetyTimer.connect("timeout", self, "queue_free")
 	safetyTimer.set_wait_time(1)
 	safetyTimer.start()
+
+func getSlapped():
+	timer.stop()
+	destroyIfNotHuman()
