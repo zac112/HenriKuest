@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Scenes/WorldGen/GridManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Mainmenu/Intro.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Scripts/UI/visibility.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scripts/UI/Visibility.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sprites/Gamelogo.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Mainmenu/Background/Untitled.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Fonts/arial.ttf" type="DynamicFontData" id=6]

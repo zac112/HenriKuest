@@ -5,8 +5,8 @@ var rng = RandomNumberGenerator.new()
 var parentSquare
 var parentTent
 var attackTimer = Timer.new()
-
 var grid
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parentTent = get_parent()
@@ -73,7 +73,7 @@ func _createEnemyBishop(closestTent):
 	var path = get_parent().get_parent().get_parent().findPath(parentSquare.global_position, closestTent.get_parent().global_position)
 	
 	grid.add_child(enemyPlayer)
-	enemyPlayer.travelPath(path)
+	enemyPlayer.setTravelPath(path)
 	
 	return enemyPlayer
 	

@@ -16,7 +16,7 @@ func setHome(home):
 func setTeam(num):
 	self.team = num
 	
-func travelPath(_path:Array):
+func setTravelPath(_path:Array):
 	add_child(timer)
 	timer.connect("timeout",self,"next")
 	timer.start()
