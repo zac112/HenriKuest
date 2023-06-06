@@ -121,6 +121,7 @@ func bishopSlap(bishopsInRange):
 
 func restoreBishopSlap():
 	bishopSlapAvailable = true
+	slapCooldownTimer.stop()
 
 func processSlapCooldownBar():
 	var percentDone = slapCooldownTimer.get_time_left()/slapCooldownTimer.get_wait_time()
